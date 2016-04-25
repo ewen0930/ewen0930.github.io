@@ -81,30 +81,18 @@
 
 
 <meta name="description" content="Copy From http://www.ahonn.me/2016/04/04/javascript-closure/
-作用域在 JavaScript 中变量的作用域与其他语言不同，JavaScript 的作用域不是由 {} 来界定，而是函数。所以循环实际上是在全局作用域中。
-for(var i = 0; i &amp;lt; 10; i++) {}
-
-console.log(i);  // 10
-全局">
+作用域在 JavaScript 中变量的作用域与其他语言不同，JavaScript 的作用域不是由 {} 来界定，而是函数。所以循环实际上是在全局作用域中。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 之闭包">
 <meta property="og:url" content="http://ewen0930.github.io/2016/04/javascript-closure/index.html">
 <meta property="og:site_name" content="Hello Ewen">
 <meta property="og:description" content="Copy From http://www.ahonn.me/2016/04/04/javascript-closure/
-作用域在 JavaScript 中变量的作用域与其他语言不同，JavaScript 的作用域不是由 {} 来界定，而是函数。所以循环实际上是在全局作用域中。
-for(var i = 0; i &amp;lt; 10; i++) {}
-
-console.log(i);  // 10
-全局">
-<meta property="og:updated_time" content="2016-04-25T16:06:10.000Z">
+作用域在 JavaScript 中变量的作用域与其他语言不同，JavaScript 的作用域不是由 {} 来界定，而是函数。所以循环实际上是在全局作用域中。">
+<meta property="og:updated_time" content="2016-04-25T16:56:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 之闭包">
 <meta name="twitter:description" content="Copy From http://www.ahonn.me/2016/04/04/javascript-closure/
-作用域在 JavaScript 中变量的作用域与其他语言不同，JavaScript 的作用域不是由 {} 来界定，而是函数。所以循环实际上是在全局作用域中。
-for(var i = 0; i &amp;lt; 10; i++) {}
-
-console.log(i);  // 10
-全局">
+作用域在 JavaScript 中变量的作用域与其他语言不同，JavaScript 的作用域不是由 {} 来界定，而是函数。所以循环实际上是在全局作用域中。">
 
 
 
@@ -332,10 +320,8 @@ console.log(i);  // 10
 
       
         <p>Copy From <a href="http://www.ahonn.me/2016/04/04/javascript-closure/" target="_blank" rel="external">http://www.ahonn.me/2016/04/04/javascript-closure/</a></p>
-<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>在 JavaScript 中变量的作用域与其他语言不同，JavaScript 的作用域不是由 <code>{}</code> 来界定，而是函数。所以循环实际上是在全局作用域中。</p>
-<pre><code>for(var i = 0; i &lt; 10; i++) {}
-
-console.log(i);  // 10
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>在 JavaScript 中变量的作用域与其他语言不同，JavaScript 的作用域不是由 <code>{}</code> 来界定，而是函数。所以循环实际上是在全局作用域中。<br><a id="more"></a><br>    for(var i = 0; i &lt; 10; i++) {}</p>
+<pre><code>console.log(i);  // 10
 </code></pre><h3 id="全局变量-amp-局部变量"><a href="#全局变量-amp-局部变量" class="headerlink" title="全局变量 &amp; 局部变量"></a>全局变量 &amp; 局部变量</h3><p>JavaScript 变量的作用域分为两种，全局和局部。</p>
 <p>在 JavaScript 中声明全局变量有两种方式，一种是在全局环境下使用 <code>var</code> 声明，另一种是在任何地方直接初始化变量，那么它将会是全局变量。</p>
 <pre><code>var name = &apos;ahonn&apos;;   // 全局变量

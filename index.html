@@ -321,117 +321,12 @@
 
       
         
-          
-            <p>使用Markdown来撰写API接口文档，格式统一，更新简单，方便在线文档(比如 <a href="https://worktile.com/dashboard" target="_blank" rel="external">Worktile</a> 的文档功能 )</p>
-<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><pre><code>查询指定项目属性接口
------------
-
-### 1. 查询指定项目属性
-
-#### 接口功能
-
-&gt; 获取制定项目的分类信息
-
-#### URL
-
-&gt; [http://www.api.com/index.php](www.api.com/index.php)
-
-#### 支持格式
-
-&gt; JSON
-
-#### HTTP请求方式
-
-&gt; GET
-
-#### 请求参数
-
-|参数|必选|类型|说明|
-|:----- |:-------|:-----|----- |
-|name |ture |string|请求的项目名 |
-|type |true |int |请求项目的类型。1：类型一；2：类型二 。|
-
-#### 返回字段
-
-|返回字段|字段类型|说明 |
-|:----- |:------|:----------------------------- |
-|status |int |返回结果状态。0：正常；1：错误。 |
-|company |string | 所属公司名 |
-|category |string |所属类型 |
-
-#### 接口示例
-
-&gt; 地址：[http://www.api.com/index.php?name=&quot;可口可乐&quot;&amp;type=1](http://www.api.com/index.php?name=&quot;可口可乐&quot;&amp;type=1)
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">"state"</span>: <span class="number">0</span>,</span><br><span class="line"><span class="string">"company"</span>: <span class="string">"可口可乐"</span>,</span><br><span class="line"><span class="string">"category"</span>: <span class="string">"饮料"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h3 id="转换后的代码API文档如下"><a href="#转换后的代码API文档如下" class="headerlink" title="转换后的代码API文档如下"></a>转换后的代码API文档如下</h3><hr>
-<h2 id="查询指定项目属性接口"><a href="#查询指定项目属性接口" class="headerlink" title="查询指定项目属性接口"></a>查询指定项目属性接口</h2><h3 id="1-查询指定项目属性"><a href="#1-查询指定项目属性" class="headerlink" title="1. 查询指定项目属性"></a>1. 查询指定项目属性</h3><h4 id="接口功能"><a href="#接口功能" class="headerlink" title="接口功能"></a>接口功能</h4><blockquote>
-<p>获取制定项目的分类信息</p>
-</blockquote>
-<h4 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h4><blockquote>
-<p><a href="www.api.com/index.php">http://www.api.com/index.php</a></p>
-</blockquote>
-<h4 id="支持格式"><a href="#支持格式" class="headerlink" title="支持格式"></a>支持格式</h4><blockquote>
-<p>JSON</p>
-</blockquote>
-<h4 id="HTTP请求方式"><a href="#HTTP请求方式" class="headerlink" title="HTTP请求方式"></a>HTTP请求方式</h4><blockquote>
-<p>GET</p>
-</blockquote>
-<h4 id="请求参数"><a href="#请求参数" class="headerlink" title="请求参数"></a>请求参数</h4><table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">必选</th>
-<th style="text-align:left">类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">name</td>
-<td style="text-align:left">ture</td>
-<td style="text-align:left">string</td>
-<td>请求的项目名</td>
-</tr>
-<tr>
-<td style="text-align:left">type</td>
-<td style="text-align:left">true</td>
-<td style="text-align:left">int</td>
-<td>请求项目的类型。1：类型一；2：类型二 。</td>
-</tr>
-</tbody>
-</table>
-<h4 id="返回字段"><a href="#返回字段" class="headerlink" title="返回字段"></a>返回字段</h4><table>
-<thead>
-<tr>
-<th style="text-align:left">返回字段</th>
-<th style="text-align:left">字段类型</th>
-<th style="text-align:left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">status</td>
-<td style="text-align:left">int</td>
-<td style="text-align:left">返回结果状态。0：正常；1：错误。</td>
-</tr>
-<tr>
-<td style="text-align:left">company</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">所属公司名</td>
-</tr>
-<tr>
-<td style="text-align:left">category</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">所属类型</td>
-</tr>
-</tbody>
-</table>
-<h4 id="接口示例"><a href="#接口示例" class="headerlink" title="接口示例"></a>接口示例</h4><blockquote>
-<p>地址：<a href="http://www.api.com/index.php?name=&quot;可口可乐&quot;&amp;type=1" target="_blank" rel="external">http://www.api.com/index.php?name=”可口可乐”&amp;type=1</a></p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">"state"</span>: <span class="number">0</span>,</span><br><span class="line"><span class="string">"company"</span>: <span class="string">"可口可乐"</span>,</span><br><span class="line"><span class="string">"category"</span>: <span class="string">"饮料"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
+          <p>使用Markdown来撰写API接口文档，格式统一，更新简单，方便在线文档(比如 <a href="https://worktile.com/dashboard">Worktile</a> 的文档功能 )</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/markdown-write-api-docs/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -541,8 +436,7 @@
 
       
         
-          
-            <h4 id="package-json-依赖列表"><a href="#package-json-依赖列表" class="headerlink" title="package.json 依赖列表"></a>package.json 依赖列表</h4><pre><code>{
+          <h4 id="package-json-依赖列表"><a href="#package-json-依赖列表" class="headerlink" title="package.json 依赖列表"></a>package.json 依赖列表</h4><pre><code>{
    &quot;name&quot;: &quot;miFarm_Root&quot;,
    &quot;description&quot;: &quot;miFarm Root&quot;,
    &quot;version&quot;: &quot;0.8.0&quot;,
@@ -564,89 +458,12 @@
      &quot;gulp-sourcemaps&quot;: &quot;*&quot;
    }
 }
-</code></pre><h4 id="gulpfile-js-配置"><a href="#gulpfile-js-配置" class="headerlink" title="gulpfile.js 配置"></a>gulpfile.js 配置</h4><pre><code>// 引入 gulp &amp; 组件
-var gulp = require(&apos;gulp&apos;);
-var jshint = require(&apos;gulp-jshint&apos;);
-var concat = require(&apos;gulp-concat&apos;);
-var rename = require(&apos;gulp-rename&apos;);
-var uglify = require(&apos;gulp-uglify&apos;);
-
-//var notify = require(&apos;gulp-notify&apos;);
-var del = require(&apos;del&apos;);
-
-//var sass = require(&apos;gulp-sass&apos;);
-//var less = require(&apos;gulp-less&apos;);
-
-var minifyHTML = require(&apos;gulp-minify-html&apos;);  //代码压缩
-var minifyCSS = require(&apos;gulp-minify-css&apos;);
-var prefix = require(&apos;gulp-autoprefixer&apos;);
-var sourcemaps = require(&apos;gulp-sourcemaps&apos;);
-
-var livereload = require(&apos;gulp-livereload&apos;);  //livereload插件
-
-// 语法检查  Lint JS
-gulp.task(&apos;lint&apos;, function () {
-    return gulp.src([&apos;src/js/easeljs/*.js&apos;, &apos;!src/js/main.js&apos;])
-        .pipe(jshint())
-        .pipe(jshint.reporter(&apos;default&apos;));
-});
-
-
-// 合并文件之后压缩代码
-gulp.task(&apos;minify&apos;, function () {
-    return gulp.src([&apos;src/js/easeljs/easeljs-0.7.1.min.js&apos;, &apos;src/js/easeljs/tweenjs-0.5.1.min.js&apos;, &apos;src/js/easeljs/preloadjs-0.4.1.min.js&apos;, &apos;src/js/easeljs/movieclip-0.7.1.min.js&apos;, &apos;src/js/easeljs/soundjs-0.5.2.min.js&apos;, &apos;src/js/common.js&apos;, &apos;src/js/GameMain.js&apos;, &apos;src/js/hero.js&apos;, &apos;src/js/hero_assets.js&apos;])
-        .pipe(concat(&apos;main.js&apos;))
-        //.pipe(gulp.dest(&apos;src/js&apos;))
-        //.pipe(rename(&apos;main.js&apos;))
-        //.pipe(uglify({compress: {drop_console: true}}))
-        .pipe(uglify())
-        .pipe(gulp.dest(&apos;dist/js&apos;));
-});
-
-
-//压缩HTML
-//empty:不删除空的属性  cdata:脚本不带CDATA  comments:不删除注释  conditionals:不删除IE条件注释  spare:不删除冗余属性  quotes:不删除引号
-gulp.task(&apos;minify-html&apos;, function () {
-    var opts = {comments: false, spare: true, quotes: true, empty: false, conditionals: true};
-    gulp.src(&apos;src/index.html&apos;)
-        .pipe(minifyHTML(opts))
-        .pipe(gulp.dest(&apos;dist/&apos;))
-});
-
-
-//压缩CSS
-gulp.task(&apos;minify-css&apos;, function () {
-    gulp.src(&apos;src/css/*.css&apos;)
-        //.pipe(prefix(&apos;last 2 versions&apos;, &apos;&gt; 1%&apos;, &apos;ie 9&apos;))
-        .pipe(minifyCSS({keepBreaks: true}))
-        //.pipe(rename(&apos;style.min.css&apos;))
-        .pipe(gulp.dest(&apos;dist/css&apos;))
-});
-
-
-//删除文件
-gulp.task(&apos;clean&apos;, function (cb) {
-    del([&apos;dist/css&apos;, &apos;dist/js&apos;, &apos;dist/images&apos;], cb)
-});
-
-
-// 监视文件的变化
-gulp.task(&apos;watch&apos;, function () {
-    gulp.watch(&apos;php/css_src/**/*.css&apos;, [&apos;concat-css&apos;]);
-    //gulp.watch(&apos;src/scss/**/*.scss&apos;, [&apos;sass&apos;]);
-    //gulp.watch(&apos;src/images/**/*&apos;, [&apos;images&apos;]);
-
-    //livereload.listen();
-    //gulp.watch(&apos;dist/**&apos;).on(&apos;change&apos;, livereload.changed);
-});
-
-
-// 注册缺省任务
-gulp.task(&apos;css&apos;, [&apos;minify-css&apos;]);
-gulp.task(&apos;default&apos;, [&apos;minify&apos;, &apos;minify-css&apos;]);
-gulp.task(&apos;debug&apos;, [&apos;lint&apos;, &apos;minify&apos;, &apos;watch&apos;]);
 </code></pre>
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/gulp-config-example/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -870,22 +687,14 @@ gulp.task(&apos;debug&apos;, [&apos;lint&apos;, &apos;minify&apos;, &apos;watch&
 
       
         
-          
-            <p>通过设置Access-Control-Allow-Origin来实现跨域。</p>
+          <p>通过设置Access-Control-Allow-Origin来实现跨域。</p>
 <h3 id="允许单个域名访问"><a href="#允许单个域名访问" class="headerlink" title="允许单个域名访问"></a>允许单个域名访问</h3><pre><code>header(&apos;Access-Control-Allow-Origin:http://client.runoob.com&apos;);
-</code></pre><h3 id="允许多个域名访问"><a href="#允许多个域名访问" class="headerlink" title="允许多个域名访问"></a>允许多个域名访问</h3><pre><code>$origin = isset($_SERVER[&apos;HTTP_ORIGIN&apos;])? $_SERVER[&apos;HTTP_ORIGIN&apos;] : &apos;&apos;;
-
-$allow_origin = array(
-    &apos;http://client1.runoob.com&apos;,
-    &apos;http://client2.runoob.com&apos;
-);
-
-if(in_array($origin, $allow_origin)){
-    header(&apos;Access-Control-Allow-Origin:&apos;.$origin);
-}
-</code></pre><h3 id="允许所有域名访问"><a href="#允许所有域名访问" class="headerlink" title="允许所有域名访问"></a>允许所有域名访问</h3><pre><code>header(&apos;Access-Control-Allow-Origin:*&apos;);
 </code></pre>
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/cross-php/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -995,69 +804,13 @@ if(in_array($origin, $allow_origin)){
 
       
         
-          
-            <p>Copy From <a href="http://www.ahonn.me/2016/04/04/javascript-closure/" target="_blank" rel="external">http://www.ahonn.me/2016/04/04/javascript-closure/</a></p>
-<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>在 JavaScript 中变量的作用域与其他语言不同，JavaScript 的作用域不是由 <code>{}</code> 来界定，而是函数。所以循环实际上是在全局作用域中。</p>
-<pre><code>for(var i = 0; i &lt; 10; i++) {}
-
-console.log(i);  // 10
-</code></pre><h3 id="全局变量-amp-局部变量"><a href="#全局变量-amp-局部变量" class="headerlink" title="全局变量 &amp; 局部变量"></a>全局变量 &amp; 局部变量</h3><p>JavaScript 变量的作用域分为两种，全局和局部。</p>
-<p>在 JavaScript 中声明全局变量有两种方式，一种是在全局环境下使用 <code>var</code> 声明，另一种是在任何地方直接初始化变量，那么它将会是全局变量。</p>
-<pre><code>var name = &apos;ahonn&apos;;   // 全局变量
-
-function f1() {
-  name = &apos;ahonn&apos;;   // 还是全局变量
-}
-</code></pre><p>除了在任意地方直接初始化声明全局变量这一特殊之处外，JavaScript 全局变量还可以在函数内部直接读取。</p>
-<pre><code>var name = &apos;ahonn&apos;;
-
-function f1() {
-  console.log(name);
-}
-
-f1();   // &apos;ahonn&apos;
-</code></pre><p>在函数中使用 <code>var</code> 定义的变量为局部变量。因为 JavaScript 的作用域是由函数界定，那么理所当然的函数外部是无法读取函数内部的局部变量。这一点其实其他的编程语言也是这样的。</p>
-<pre><code>function f1() {
-                                var name = &apos;ahonn&apos;;
-                              }
-
-                              console.log(name) // Error
-</code></pre><h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><p>作用域链的原理与原型链很类似。在某个环境中为了读取变量时，会沿着作用域链来搜索这个变量，从作用域链的前端开始，向上级搜索。如果在当前局部环境中没有找到该变量，则继续沿作用域链向上搜索，直到最顶层。搜索到该变量时将停止搜索，如果到最后还是没有找到该变量，那么意味着这个变量是未定义的，即它的值为 <code>undefined</code>。</p>
-<pre><code>var a = &apos;a&apos;;
-
-function f1() {
-  var b = &apos;b&apos;;
-  console.log(a + b);
-}
-
-f1()     // &apos;ab&apos;
-</code></pre><p>在这个例子中，在全局环境中定义了全局变量 a，然后在函数中定义了局部变量 b。函数通过 <code>console.log</code> 输出 a + b。</p>
-<p>首先在当前的局部环境中搜索变量 a 的值，没有找到。那么继续向上一级搜索，在全局环境中找到标识符为 a 的变量的值 ‘a’。接着在局部环境中搜索变量 b，得到局部变量 b 的值 ‘b’。最后输入变量 a 和 b 的值拼接后的字符串的值。</p>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>函数外部无法读取函数内部定义的局部变量，所以当我们需要读取局部变量时就需要使用到闭包。</p>
-<p>那么闭包是什么呢？我的理解是函数返回一个局部作用域来使得函数外部能够读取函数内部的变量。因为 JavaScript 中作用域的界定是由函数来完成的，所以实际上也就是在函数中再返回一个函数。闭包将函数内外给联系了起来。</p>
-<pre><code>function f1() {
-  var name = &apos;ahonn&apos;;
-  return function () {
-    console.log(name);
-  }
-}
-
-f1();   // &apos;ahonn&apos;
-</code></pre><p>一般情况下，当函数执行后，函数所在的局部环境将被销毁，也就是说函数在执行后函数中的变量是会被销毁的，在内存中就仅存在全局环境，即全局变量。</p>
-<p>但是使用闭包的情况又有所不同，在函数内部定义的匿名函数会包含函数（外部函数，即包含匿名函数的函数）中的变量。在外部函数执行完毕后，原本应该被销毁的局部变量不会被销毁，因为闭包的作用域链仍然在引用这些局部函数，内存的垃圾回收机制不会回收这部分变量所在的内存空间。直到匿名函数被销毁后，这些局部对象才会被销毁。</p>
-<h3 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a><a href="#内存泄漏" title="内存泄漏"></a>内存泄漏</h3><p>由于闭包使得函数中的局部变量不会被垃圾回收机制回收，会依然存在于内存中，所以使用闭包的内存消耗很大，所以大量的使用闭包会造成性能问题。另外，在IE中可能会导致内存泄漏。解决方法是在退出函数前将不使用的局部变量全部删除。</p>
-<pre><code>function f1() {
-  var e = document.getElementById(&apos;id&apos;);
-  var id = e.id;
-
-  e.onclick = function() {
-    alert(id);
-  }
-
-  e = null;     // 删除不使用的局部变量值，只将需要的 id 保存为副本
-}
-</code></pre>
-          
+          <p>Copy From <a href="http://www.ahonn.me/2016/04/04/javascript-closure/">http://www.ahonn.me/2016/04/04/javascript-closure/</a></p>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>在 JavaScript 中变量的作用域与其他语言不同，JavaScript 的作用域不是由 <code>{}</code> 来界定，而是函数。所以循环实际上是在全局作用域中。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/javascript-closure/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1167,19 +920,13 @@ f1();   // &apos;ahonn&apos;
 
       
         
-          
-            <p>使用WebStorm做开发，因为英文水平有限，就做了这个汉化包；</p>
-<p>源文件放在 <a href="https://github.com/ewen0930/WebStorm-Chinese" target="_blank" rel="external">Github</a> ，会跟踪WebStorm的主要版本做更新，目前已经更新到了 <a href="https://github.com/ewen0930/WebStorm-Chinese/releases/tag/0.7.0-beta-v2016.1" target="_blank" rel="external">2016.1</a> 版本</p>
-<p>因为开始使用了大量的自动翻译，虽然几经校对，加上英文水平有限，应该还有一些的翻译错误在里面！</p>
-<p><img src="/images/201604/webstorm_2016.1_01.jpg" alt="WebStorm 中文语言包"></p>
-<p><img src="/images/201604/webstorm_2016.1_02.jpg" alt="WebStorm 中文语言包"></p>
-<p>直接下载地址：<a href="http://pan.baidu.com/s/1slqrL3v" target="_blank" rel="external">Webstorm_2016.1_zh.zip</a></p>
-<p>其他版本请浏览：<a href="https://github.com/ewen0930/WebStorm-Chinese/releases" target="_blank" rel="external">https://github.com/ewen0930/WebStorm-Chinese/releases</a></p>
-<p>把压缩包里的”resources_zh.jar”拷贝到WebStorm安装目录下的lib目录，重启WebStorm 即可！</p>
-<hr>
-<p>后续又根据该语言包制作了 JetBrains 同系列的 <a href="https://github.com/ewen0930/PhpStorm-Chinese" target="_blank" rel="external">PhpStorm</a> 和 <a href="https://github.com/ewen0930/PyCharm-Chinese" target="_blank" rel="external">PyCharm</a> 中文语言包</p>
-
-          
+          <p>使用WebStorm做开发，因为英文水平有限，就做了这个汉化包；</p>
+<p>源文件放在 <a href="https://github.com/ewen0930/WebStorm-Chinese">Github</a> ，会跟踪WebStorm的主要版本做更新，目前已经更新到了 <a href="https://github.com/ewen0930/WebStorm-Chinese/releases/tag/0.7.0-beta-v2016.1">2016.1</a> 版本</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/webstorm-chinese-language-pack/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1289,147 +1036,13 @@ f1();   // &apos;ahonn&apos;
 
       
         
-          
-            <p>Github和Hexo上很多地方都使用*.md来写文档，整理常用的<code>code</code>方便copy使用；</p>
-<p>详细语法说明请可以参考 <a href="/2016/04/markdown/">Markdown 语法说明</a></p>
-<pre><code>This is an H1
-=============
-
-this is an h2
----------------
-
-# This is an H1
-## This is an H2
-### This is an H3
-#### This is an H4
-##### This is an H5
-###### This is an H6
-
-# This is an H1 #
-## This is an H2 #
-### This is an H3 #
-#### This is an H4 #
-##### This is an H5 #
-###### This is an H6 #
-
-## HTML ##
-This is a regular paragraph.
-
-&lt;table&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Foo&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
-
-This is another regular paragraph.
-
-## 区块元素 BLOCK ##
-###### block.eg1 #
-&gt; This is the first level of quoting.
-&gt;
-&gt; &gt; This is nested blockquote.
-&gt;
-&gt; Back to the first level.
-
-###### block.eg2 #
-&gt; ## This is a header.
-&gt;
-&gt; 1.   This is the first list item.
-&gt; 2.   This is the second list item.
-&gt;
-&gt; Here&apos;s some example code:
-&gt;
-&gt;     return shell_exec(&quot;echo $input | $markdown_script&quot;);
-
-###### block.code.eg1 #
-Here is an example of AppleScript:
-
-    tell application &quot;Foo&quot;
-        beep
-    end tell
-
-###### block.code.eg2 #
-``There is a literal backtick (`) here.``
-
-## 列表 LIST ##
-
-###### list.eg1 #
-*  red
-*  green
-*  blue
-
-###### list.eg2 #
-+  red
-+  green
-+  blue
-
-###### list.eg3 #
--  red
--  green
--  blue
-
-###### list.eg4 #
-1. red
-2. green
-3. blue
-
-## 横线 HORIZONTAL RULES #
-
-* * *
-***
-******
-- - -
----------------------------------
-
-## 链接 LINK #
-
-1.This is [an example](http://example.com/ &quot;Title&quot;) inline link.
-
-2.[This link](http://example.net/) has no title attribute.
-
-3.This is [an example] [id] reference-style link.
-
-[id]: http://example.com/  &quot;Optional Title Here&quot;
-
-
-## 强调 EMPHASIS #
-
-*single asterisks*
-
-_single underscores_
-
-**double asterisks**
-
-__double underscores__
-
-## 图片 IMAGE #
-
-![Alt text](/path/to/img.jpg)
-
-![Alt text](/path/to/img.jpg &quot;Optional title&quot;)
-
-![Alt text](http://www.google.com.hk/images/srpr/logo3w.png &quot;Optional title&quot;)
-
-![Alt text][id]
-
-[id]: /path/to/img.jpg  &quot;Optional title attribute&quot;
-
-
-## 表格 TABLE #
-
-| Item      |    Value | Qty  |
-| :-------- | --------:| :--: |
-| Computer  | 1600 USD |  5   |
-| Phone     |   12 USD |  12  |
-| Pipe      |    1 USD | 234  |
-
-## MISC #
-###### 自动链接 AUTOMATIC LINKS  #
-&lt;http://www.163.com&gt;
-
-&lt;address@example.com&gt;
-</code></pre>
-          
+          <p>Github和Hexo上很多地方都使用*.md来写文档，整理常用的<code>code</code>方便copy使用；</p>
+<p>详细语法说明请可以参考 <a href="/2016/04/markdown/">Markdown 语法说明</a><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/hello-markdown/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1539,525 +1152,12 @@ __double underscores__
 
       
         
-          
-            <p><strong>声明：</strong> 这份文档派生(fork)于<a href="http://markdown.tw/" target="_blank" rel="external">繁体中文版</a>，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里<a href="http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md" target="_blank" rel="external">查看它的源文件</a>。「繁体中文版的原始文件可以<a href="https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md" target="_blank" rel="external">查看这里</a> 。」–By @<a href="http://twitter.com/riku" target="_blank" rel="external">riku</a></p>
-<p><strong>注：</strong> 本项目托管于 <a href="http://gitcafe.com/riku/Markdown-Syntax-CN/" target="_blank" rel="external">GitCafe</a>上，请通过”派生”和”合并请求”来帮忙改进本项目。</p>
-<h1 id="Markdown-语法说明-简体中文版-点击查看快速入门"><a href="#Markdown-语法说明-简体中文版-点击查看快速入门" class="headerlink" title="Markdown 语法说明 (简体中文版) / (点击查看快速入门)"></a>Markdown 语法说明 (简体中文版) / (<a href="./basic.html">点击查看快速入门</a>)</h1><ul>
-<li><a href="#overview">概述</a><ul>
-<li><a href="#philosophy">宗旨</a></li>
-<li><a href="#html">兼容 HTML</a></li>
-<li><a href="#autoescape">特殊字符自动转换</a></li>
-</ul>
-</li>
-<li><a href="#block">区块元素</a><ul>
-<li><a href="#p">段落和换行</a></li>
-<li><a href="#header">标题</a></li>
-<li><a href="#blockquote">区块引用</a></li>
-<li><a href="#list">列表</a></li>
-<li><a href="#precode">代码区块</a></li>
-<li><a href="#hr">分隔线</a></li>
-</ul>
-</li>
-<li><a href="#span">区段元素</a><ul>
-<li><a href="#link">链接</a></li>
-<li><a href="#em">强调</a></li>
-<li><a href="#code">代码</a></li>
-<li><a href="#img">图片</a></li>
-</ul>
-</li>
-<li><a href="#misc">其它</a><ul>
-<li><a href="#backslash">反斜杠</a></li>
-<li><a href="#autolink">自动链接</a></li>
-</ul>
-</li>
-<li><a href="#acknowledgement">感谢</a></li>
-<li><a href="#editor">Markdown 免费编辑器</a></li>
-</ul>
-<hr>
-<h2 id="overview">概述</h2>
-
-<h3 id="philosophy">宗旨</h3>
-
-<p>Markdown 的目标是实现「易读易写」。</p>
-<p>可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 <a href="http://docutils.sourceforge.net/mirror/setext.html" target="_blank" rel="external">Setext</a>、<a href="http://www.aaronsw.com/2002/atx/" target="_blank" rel="external">atx</a>、<a href="http://textism.com/tools/textile/" target="_blank" rel="external">Textile</a>、<a href="http://docutils.sourceforge.net/rst.html" target="_blank" rel="external">reStructuredText</a>、<a href="http://www.triptico.com/software/grutatxt.html" target="_blank" rel="external">Grutatext</a> 和 <a href="http://ettext.taint.org/doc/" target="_blank" rel="external">EtText</a>，而最大灵感来源其实是纯文本电子邮件的格式。</p>
-<p>总之， Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。比如：在文字两旁加上星号，看起来就像*强调*。Markdown 的列表看起来，嗯，就是列表。Markdown 的区块引用看起来就真的像是引用一段文字，就像你曾在电子邮件中见过的那样。</p>
-<h3 id="html">兼容 HTML</h3>
-
-<p>Markdown 语法的目标是：成为一种适用于网络的<em>书写</em>语言。</p>
-<p>Markdown 并不是想取代 HTML的地位，甚至接近它。它的语法种类很少，只对应 HTML 标记的一小部分。Markdown 的构想<em>不是</em>要使得 HTML 文档更容易书写。在我看来， HTML 已经很容易写了。Markdown 的理念是，能让文档更容易读、写和随意改。HTML 是一种<em>发布</em>的格式，Markdown 是一种<em>书写</em>的格式。就这样，Markdown 的格式语法只涵盖纯文本可以涵盖的范围。</p>
-<p>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。</p>
-<p>要制约的只有一些 HTML 区块元素――比如 <code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;p&gt;</code> 等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能用制表符或空格来缩进。Markdown 的生成器有足够智能，不会在 HTML 区块标签外加上不必要的 <code>&lt;p&gt;</code> 标签。</p>
-<p>例子如下，在 Markdown 文件里加上一段 HTML 表格：</p>
-<pre><code>这是一个普通段落。
-
-&lt;table&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Foo&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
-
-这是另一个普通段落。
-</code></pre><p>请注意，在 HTML 区块标签间的 Markdown 格式语法将不会被处理。比如，你在 HTML 区块内使用 Markdown 样式的<code>*强调*</code>会没有效果。</p>
-<p>HTML 的区段（行内）标签如 <code>&lt;span&gt;</code>、<code>&lt;cite&gt;</code>、<code>&lt;del&gt;</code> 可以在 Markdown 的段落、列表或是标题里随意使用。依照个人习惯，甚至可以不用 Markdown 格式，而直接采用 HTML 标签来格式化。举例说明：如果比较喜欢 HTML 的 <code>&lt;a&gt;</code> 或 <code>&lt;img&gt;</code> 标签，可以直接使用这些标签，而不用 Markdown 提供的链接或是图像标签语法。</p>
-<p>和处在 HTML 区块标签间不同，Markdown 语法在 HTML 区段标签间是有效的。</p>
-<h3 id="autoescape">特殊字符自动转换</h3>
-
-<p>在 HTML 文件中，有两个字符需要特殊处理： <code>&lt;</code> 和 <code>&amp;</code> 。 <code>&lt;</code> 符号用于起始标签，<code>&amp;</code> 符号则用于标记 HTML 实体，如果你只是想要显示这些字符的原型，你必须要使用实体的形式，像是 <code>&amp;lt;</code> 和 <code>&amp;amp;</code>。</p>
-<p><code>&amp;</code> 字符尤其让网络文档编写者受折磨，如果你要打「<code>AT&amp;T</code>」 ，你必须要写成「<code>AT&amp;amp;T</code>」。而网址中的 <code>&amp;</code> 字符也要转换。比如你要链接到：</p>
-<pre><code>http://images.google.com/images?num=30&amp;q=larry+bird
-</code></pre><p>你必须要把网址转换写为：</p>
-<pre><code>http://images.google.com/images?num=30&amp;amp;q=larry+bird
-</code></pre><p>才能放到链接标签的 <code>href</code> 属性里。不用说也知道这很容易忽略，这也可能是 HTML 标准检验所检查到的错误中，数量最多的。</p>
-<p>Markdown 让你可以自然地书写字符，需要转换的由它来处理好了。如果你使用的 <code>&amp;</code> 字符是 HTML 字符实体的一部分，它会保留原状，否则它会被转换成 <code>&amp;amp</code>;。</p>
-<p>所以你如果要在文档中插入一个版权符号 <code>©</code>，你可以这样写：</p>
-<pre><code>&amp;copy;
-</code></pre><p>Markdown 会保留它不动。而若你写：</p>
-<pre><code>AT&amp;T
-</code></pre><p>Markdown 就会将它转为：</p>
-<pre><code>AT&amp;amp;T
-</code></pre><p>类似的状况也会发生在 <code>&lt;</code> 符号上，因为 Markdown 允许 <a href="#html">兼容 HTML</a> ，如果你是把 <code>&lt;</code> 符号作为 HTML 标签的定界符使用，那 Markdown 也不会对它做任何转换，但是如果你写：</p>
-<pre><code>4 &lt; 5
-</code></pre><p>Markdown 将会把它转换为：</p>
-<pre><code>4 &amp;lt; 5
-</code></pre><p>不过需要注意的是，code 范围内，不论是行内还是区块， <code>&lt;</code> 和 <code>&amp;</code> 两个符号都<em>一定</em>会被转换成 HTML 实体，这项特性让你可以很容易地用 Markdown 写 HTML code （和 HTML 相对而言， HTML 语法中，你要把所有的 <code>&lt;</code> 和 <code>&amp;</code> 都转换为 HTML 实体，才能在 HTML 文件里面写出 HTML code。）</p>
-<hr>
-<h2 id="block">区块元素</h2>
-
-
-<h3 id="p">段落和换行</h3>
-
-<p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进。</p>
-<p>「由一个或多个连续的文本行组成」这句话其实暗示了 Markdown 允许段落内的强迫换行（插入换行符），这个特性和其他大部分的 text-to-HTML 格式不一样（包括 Movable Type 的「Convert Line Breaks」选项），其它的格式会把每个换行符都转成 <code>&lt;br /&gt;</code> 标签。</p>
-<p>如果你<em>确实</em>想要依赖 Markdown 来插入 <code>&lt;br /&gt;</code> 标签的话，在插入处先按入两个以上的空格然后回车。</p>
-<p>的确，需要多费点事（多加空格）来产生 <code>&lt;br /&gt;</code> ，但是简单地「每个换行都转换为 <code>&lt;br /&gt;</code>」的方法在 Markdown 中并不适合， Markdown 中 email 式的 <a href="#blockquote">区块引用</a> 和多段落的 <a href="#list">列表</a> 在使用换行来排版的时候，不但更好用，还更方便阅读。</p>
-<h3 id="header">标题</h3>
-
-<p>Markdown 支持两种标题的语法，类 <a href="http://docutils.sourceforge.net/mirror/setext.html" target="_blank" rel="external">Setext</a> 和类 <a href="http://www.aaronsw.com/2002/atx/" target="_blank" rel="external">atx</a> 形式。</p>
-<p>类 Setext 形式是用底线的形式，利用 <code>=</code> （最高阶标题）和 <code>-</code> （第二阶标题），例如：</p>
-<pre><code>This is an H1
-=============
-
-This is an H2
--------------
-</code></pre><p>任何数量的 <code>=</code> 和 <code>-</code> 都可以有效果。</p>
-<p>类 Atx 形式则是在行首插入 1 到 6 个 <code>#</code> ，对应到标题 1 到 6 阶，例如：</p>
-<pre><code># 这是 H1
-
-## 这是 H2
-
-###### 这是 H6
-</code></pre><p>你可以选择性地「闭合」类 atx 样式的标题，这纯粹只是美观用的，若是觉得这样看起来比较舒适，你就可以在行尾加上 <code>#</code>，而行尾的 <code>#</code> 数量也不用和开头一样（行首的井字符数量决定标题的阶数）：</p>
-<pre><code># 这是 H1 #
-
-## 这是 H2 ##
-
-### 这是 H3 ######
-</code></pre><h3 id="blockquote">区块引用 Blockquotes</h3>
-
-<p>Markdown 标记区块引用是使用类似 email 中用 <code>&gt;</code> 的引用方式。如果你还熟悉在 email 信件中的引言部分，你就知道怎么在 Markdown 文件中建立一个区块引用，那会看起来像是你自己先断好行，然后在每行的最前面加上 <code>&gt;</code> ：</p>
-<pre><code>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-&gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-&gt;
-&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-&gt; id sem consectetuer libero luctus adipiscing.
-</code></pre><p>Markdown 也允许你偷懒只在整个段落的第一行最前面加上 <code>&gt;</code> ：</p>
-<pre><code>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-
-&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-id sem consectetuer libero luctus adipiscing.
-</code></pre><p>区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 <code>&gt;</code> ：</p>
-<pre><code>&gt; This is the first level of quoting.
-&gt;
-&gt; &gt; This is nested blockquote.
-&gt;
-&gt; Back to the first level.
-</code></pre><p>引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：</p>
-<pre><code>&gt; ## 这是一个标题。
-&gt;
-&gt; 1.   这是第一行列表项。
-&gt; 2.   这是第二行列表项。
-&gt;
-&gt; 给出一些例子代码：
-&gt;
-&gt;     return shell_exec(&quot;echo $input | $markdown_script&quot;);
-</code></pre><p>任何像样的文本编辑器都能轻松地建立 email 型的引用。例如在 BBEdit 中，你可以选取文字后然后从选单中选择<em>增加引用阶层</em>。</p>
-<h3 id="list">列表</h3>
-
-<p>Markdown 支持有序列表和无序列表。</p>
-<p>无序列表使用星号、加号或是减号作为列表标记：</p>
-<pre><code>*   Red
-*   Green
-*   Blue
-</code></pre><p>效果就是</p>
-<ul>
-<li>red</li>
-<li>green</li>
-<li>blue</li>
-</ul>
-<p>等同于：</p>
-<pre><code>+   Red
-+   Green
-+   Blue
-</code></pre><p>也等同于：</p>
-<pre><code>-   Red
--   Green
--   Blue
-</code></pre><p>有序列表则使用数字接着一个英文句点：</p>
-<pre><code>1.  Bird
-2.  McHale
-3.  Parish
-</code></pre><p>很重要的一点是，你在列表标记上使用的数字并不会影响输出的 HTML 结果，上面的列表所产生的 HTML 标记为：</p>
-<pre><code>&lt;ol&gt;
-&lt;li&gt;Bird&lt;/li&gt;
-&lt;li&gt;McHale&lt;/li&gt;
-&lt;li&gt;Parish&lt;/li&gt;
-&lt;/ol&gt;
-</code></pre><p>如果你的列表标记写成：</p>
-<pre><code>1.  Bird
-1.  McHale
-1.  Parish
-</code></pre><p>或甚至是：</p>
-<pre><code>3. Bird
-1. McHale
-8. Parish
-</code></pre><p>你都会得到完全相同的 HTML 输出。重点在于，你可以让 Markdown 文件的列表数字和输出的结果相同，或是你懒一点，你可以完全不用在意数字的正确性。</p>
-<p>如果你使用懒惰的写法，建议第一个项目最好还是从 1. 开始，因为 Markdown 未来可能会支持有序列表的 start 属性。</p>
-<p>列表项目标记通常是放在最左边，但是其实也可以缩进，最多 3 个空格，项目标记后面则一定要接着至少一个空格或制表符。</p>
-<p>要让列表看起来更漂亮，你可以把内容用固定的缩进整理好：</p>
-<pre><code>*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-    viverra nec, fringilla in, laoreet vitae, risus.
-*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-    Suspendisse id sem consectetuer libero luctus adipiscing.
-</code></pre><p>但是如果你懒，那也行：</p>
-<pre><code>*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-viverra nec, fringilla in, laoreet vitae, risus.
-*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-Suspendisse id sem consectetuer libero luctus adipiscing.
-</code></pre><p>如果列表项目间用空行分开，在输出 HTML 时 Markdown 就会将项目内容用 <code>&lt;p&gt;</code><br>标签包起来，举例来说：</p>
-<pre><code>*   Bird
-*   Magic
-</code></pre><p>会被转换为：</p>
-<pre><code>&lt;ul&gt;
-&lt;li&gt;Bird&lt;/li&gt;
-&lt;li&gt;Magic&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre><p>但是这个：</p>
-<pre><code>*   Bird
-
-*   Magic
-</code></pre><p>会被转换为：</p>
-<pre><code>&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Bird&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Magic&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre><p>列表项目可以包含多个段落，每个项目下的段落都必须缩进 4 个空格或是 1 个制表符：</p>
-<pre><code>1.  This is a list item with two paragraphs. Lorem ipsum dolor
-    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
-    mi posuere lectus.
-
-    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
-    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
-    sit amet velit.
-
-2.  Suspendisse id sem consectetuer libero luctus adipiscing.
-</code></pre><p>如果你每行都有缩进，看起来会看好很多，当然，再次地，如果你很懒惰，Markdown 也允许：</p>
-<pre><code>*   This is a list item with two paragraphs.
-
-    This is the second paragraph in the list item. You&apos;re
-only required to indent the first line. Lorem ipsum dolor
-sit amet, consectetuer adipiscing elit.
-
-*   Another item in the same list.
-</code></pre><p>如果要在列表项目内放进引用，那 <code>&gt;</code> 就需要缩进：</p>
-<pre><code>*   A list item with a blockquote:
-
-    &gt; This is a blockquote
-    &gt; inside a list item.
-</code></pre><p>如果要放代码区块的话，该区块就需要缩进<em>两次</em>，也就是 8 个空格或是 2 个制表符：</p>
-<pre><code>*   一列表项包含一个列表区块：
-
-        &lt;代码写在这&gt;
-</code></pre><p>当然，项目列表很可能会不小心产生，像是下面这样的写法：</p>
-<pre><code>1986. What a great season.
-</code></pre><p>换句话说，也就是在行首出现<em>数字-句点-空白</em>，要避免这样的状况，你可以在句点前面加上反斜杠。</p>
-<pre><code>1986\. What a great season.
-</code></pre><h3 id="precode">代码区块</h3>
-
-<p>和程序相关的写作或是标签语言原始码通常会有已经排版好的代码区块，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是照原来的样子显示，Markdown 会用 <code>&lt;pre&gt;</code> 和 <code>&lt;code&gt;</code> 标签来把代码区块包起来。</p>
-<p>要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以，例如，下面的输入：</p>
-<pre><code>这是一个普通段落：
-
-    这是一个代码区块。
-</code></pre><p>Markdown 会转换成：</p>
-<pre><code>&lt;p&gt;这是一个普通段落：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;这是一个代码区块。
-&lt;/code&gt;&lt;/pre&gt;
-</code></pre><p>这个每行一阶的缩进（4 个空格或是 1 个制表符），都会被移除，例如：</p>
-<pre><code>Here is an example of AppleScript:
-
-    tell application &quot;Foo&quot;
-        beep
-    end tell
-</code></pre><p>会被转换为：</p>
-<pre><code>&lt;p&gt;Here is an example of AppleScript:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;tell application &quot;Foo&quot;
-    beep
-end tell
-&lt;/code&gt;&lt;/pre&gt;
-</code></pre><p>一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。</p>
-<p>在代码区块里面， <code>&amp;</code> 、 <code>&lt;</code> 和 <code>&gt;</code> 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，再加上缩进就可以了，剩下的 Markdown 都会帮你处理，例如：</p>
-<pre><code>&lt;div class=&quot;footer&quot;&gt;
-    &amp;copy; 2004 Foo Corporation
-&lt;/div&gt;
-</code></pre><p>会被转换为：</p>
-<pre><code>&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;footer&quot;&amp;gt;
-    &amp;amp;copy; 2004 Foo Corporation
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-</code></pre><p>代码区块中，一般的 Markdown 语法不会被转换，像是星号便只是星号，这表示你可以很容易地以 Markdown 语法撰写 Markdown 语法相关的文件。</p>
-<h3 id="hr">分隔线</h3>
-
-<p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
-<pre><code>* * *
-
-***
-
-*****
-
-- - -
-
----------------------------------------
-</code></pre><hr>
-<h2 id="span">区段元素</h2>
-
-<h3 id="link">链接</h3>
-
-<p>Markdown 支持两种形式的链接语法： <em>行内式</em>和<em>参考式</em>两种形式。</p>
-<p>不管是哪一种，链接文字都是用 [方括号] 来标记。</p>
-<p>要建立一个<em>行内式</em>的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：</p>
-<pre><code>This is [an example](http://example.com/ &quot;Title&quot;) inline link.
-
-[This link](http://example.net/) has no title attribute.
-</code></pre><p>会产生：</p>
-<pre><code>&lt;p&gt;This is &lt;a href=&quot;http://example.com/&quot; title=&quot;Title&quot;&gt;
-an example&lt;/a&gt; inline link.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://example.net/&quot;&gt;This link&lt;/a&gt; has no
-title attribute.&lt;/p&gt;
-</code></pre><p>如果你是要链接到同样主机的资源，你可以使用相对路径：</p>
-<pre><code>See my [About](/about/) page for details.
-</code></pre><p><em>参考式</em>的链接是在链接文字的括号后面再接上另一个方括号，而在第二个方括号里面要填入用以辨识链接的标记：</p>
-<pre><code>This is [an example][id] reference-style link.
-</code></pre><p>你也可以选择性地在两个方括号中间加上一个空格：</p>
-<pre><code>This is [an example] [id] reference-style link.
-</code></pre><p>接着，在文件的任意处，你可以把这个标记的链接内容定义出来：</p>
-<pre><code>[id]: http://example.com/  &quot;Optional Title Here&quot;
-</code></pre><p>链接内容定义的形式为：</p>
-<ul>
-<li>方括号（前面可以选择性地加上至多三个空格来缩进），里面输入链接文字</li>
-<li>接着一个冒号</li>
-<li>接着一个以上的空格或制表符</li>
-<li>接着链接的网址</li>
-<li>选择性地接着 title 内容，可以用单引号、双引号或是括弧包着</li>
-</ul>
-<p>下面这三种链接的定义都是相同：</p>
-<pre><code>[foo]: http://example.com/  &quot;Optional Title Here&quot;
-[foo]: http://example.com/  &apos;Optional Title Here&apos;
-[foo]: http://example.com/  (Optional Title Here)
-</code></pre><p><strong>请注意：</strong>有一个已知的问题是 Markdown.pl 1.0.1 会忽略单引号包起来的链接 title。</p>
-<p>链接网址也可以用尖括号包起来：</p>
-<pre><code>[id]: &lt;http://example.com/&gt;  &quot;Optional Title Here&quot;
-</code></pre><p>你也可以把 title 属性放到下一行，也可以加一些缩进，若网址太长的话，这样会比较好看：</p>
-<pre><code>[id]: http://example.com/longish/path/to/resource/here
-    &quot;Optional Title Here&quot;
-</code></pre><p>网址定义只有在产生链接的时候用到，并不会直接出现在文件之中。</p>
-<p>链接辨别标签可以有字母、数字、空白和标点符号，但是并<em>不</em>区分大小写，因此下面两个链接是一样的：</p>
-<pre><code>[link text][a]
-[link text][A]
-</code></pre><p><em>隐式链接标记</em>功能让你可以省略指定链接标记，这种情形下，链接标记会视为等同于链接文字，要用隐式链接标记只要在链接文字后面加上一个空的方括号，如果你要让 “Google” 链接到 google.com，你可以简化成：</p>
-<pre><code>[Google][]
-</code></pre><p>然后定义链接内容：</p>
-<pre><code>[Google]: http://google.com/
-</code></pre><p>由于链接文字可能包含空白，所以这种简化型的标记内也许包含多个单词：</p>
-<pre><code>Visit [Daring Fireball][] for more information.
-</code></pre><p>然后接着定义链接：</p>
-<pre><code>[Daring Fireball]: http://daringfireball.net/
-</code></pre><p>链接的定义可以放在文件中的任何一个地方，我比较偏好直接放在链接出现段落的后面，你也可以把它放在文件最后面，就像是注解一样。</p>
-<p>下面是一个参考式链接的范例：</p>
-<pre><code>I get 10 times more traffic from [Google] [1] than from
-[Yahoo] [2] or [MSN] [3].
-
-  [1]: http://google.com/        &quot;Google&quot;
-  [2]: http://search.yahoo.com/  &quot;Yahoo Search&quot;
-  [3]: http://search.msn.com/    &quot;MSN Search&quot;
-</code></pre><p>如果改成用链接名称的方式写：</p>
-<pre><code>I get 10 times more traffic from [Google][] than from
-[Yahoo][] or [MSN][].
-
-  [google]: http://google.com/        &quot;Google&quot;
-  [yahoo]:  http://search.yahoo.com/  &quot;Yahoo Search&quot;
-  [msn]:    http://search.msn.com/    &quot;MSN Search&quot;
-</code></pre><p>上面两种写法都会产生下面的 HTML。</p>
-<pre><code>&lt;p&gt;I get 10 times more traffic from &lt;a href=&quot;http://google.com/&quot;
-title=&quot;Google&quot;&gt;Google&lt;/a&gt; than from
-&lt;a href=&quot;http://search.yahoo.com/&quot; title=&quot;Yahoo Search&quot;&gt;Yahoo&lt;/a&gt;
-or &lt;a href=&quot;http://search.msn.com/&quot; title=&quot;MSN Search&quot;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
-</code></pre><p>下面是用行内式写的同样一段内容的 Markdown 文件，提供作为比较之用：</p>
-<pre><code>I get 10 times more traffic from [Google](http://google.com/ &quot;Google&quot;)
-than from [Yahoo](http://search.yahoo.com/ &quot;Yahoo Search&quot;) or
-[MSN](http://search.msn.com/ &quot;MSN Search&quot;).
-</code></pre><p>参考式的链接其实重点不在于它比较好写，而是它比较好读，比较一下上面的范例，使用参考式的文章本身只有 81 个字符，但是用行内形式的却会增加到 176 个字元，如果是用纯 HTML 格式来写，会有 234 个字元，在 HTML 格式中，标签比文本还要多。</p>
-<p>使用 Markdown 的参考式链接，可以让文件更像是浏览器最后产生的结果，让你可以把一些标记相关的元数据移到段落文字之外，你就可以增加链接而不让文章的阅读感觉被打断。</p>
-<h3 id="em">强调</h3>
-
-<p>Markdown 使用星号（<code>*</code>）和底线（<code>_</code>）作为标记强调字词的符号，被 <code>*</code> 或 <code>_</code> 包围的字词会被转成用 <code>&lt;em&gt;</code> 标签包围，用两个 <code>*</code> 或 <code>_</code> 包起来的话，则会被转成 <code>&lt;strong&gt;</code>，例如：</p>
-<pre><code>*single asterisks*
-
-_single underscores_
-
-**double asterisks**
-
-__double underscores__
-</code></pre><p>会转成：</p>
-<pre><code>&lt;em&gt;single asterisks&lt;/em&gt;
-
-&lt;em&gt;single underscores&lt;/em&gt;
-
-&lt;strong&gt;double asterisks&lt;/strong&gt;
-
-&lt;strong&gt;double underscores&lt;/strong&gt;
-</code></pre><p>你可以随便用你喜欢的样式，唯一的限制是，你用什么符号开启标签，就要用什么符号结束。</p>
-<p>强调也可以直接插在文字中间：</p>
-<pre><code>un*frigging*believable
-</code></pre><p>但是<strong>如果你的 <code>*</code> 和 <code>_</code> 两边都有空白的话，它们就只会被当成普通的符号</strong>。</p>
-<p>如果要在文字前后直接插入普通的星号或底线，你可以用反斜线：</p>
-<pre><code>\*this text is surrounded by literal asterisks\*
-</code></pre><h3 id="code">代码</h3>
-
-<p>如果要标记一小段行内代码，你可以用反引号把它包起来（<code>` </code>），例如：</p>
-<pre><code>Use the `printf()` function.
-</code></pre><p>会产生：</p>
-<pre><code>&lt;p&gt;Use the &lt;code&gt;printf()&lt;/code&gt; function.&lt;/p&gt;
-</code></pre><p>如果要在代码区段内插入反引号，你可以用多个反引号来开启和结束代码区段：</p>
-<pre><code>``There is a literal backtick (`) here.``
-</code></pre><p>这段语法会产生：</p>
-<pre><code>&lt;p&gt;&lt;code&gt;There is a literal backtick (`) here.&lt;/code&gt;&lt;/p&gt;
-</code></pre><p>代码区段的起始和结束端都可以放入一个空白，起始端后面一个，结束端前面一个，这样你就可以在区段的一开始就插入反引号：</p>
-<pre><code>A single backtick in a code span: `` ` ``
-
-A backtick-delimited string in a code span: `` `foo` ``
-</code></pre><p>会产生：</p>
-<pre><code>&lt;p&gt;A single backtick in a code span: &lt;code&gt;`&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;A backtick-delimited string in a code span: &lt;code&gt;`foo`&lt;/code&gt;&lt;/p&gt;
-</code></pre><p>在代码区段内，<code>&amp;</code> 和尖括号<strong>都</strong>会被自动地转成 HTML 实体，这使得插入 HTML 原始码变得很容易，Markdown 会把下面这段：</p>
-<pre><code>Please don&apos;t use any `&lt;blink&gt;` tags.
-</code></pre><p>转为：</p>
-<pre><code>&lt;p&gt;Please don&apos;t use any &lt;code&gt;&amp;lt;blink&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
-</code></pre><p>你也可以这样写：</p>
-<pre><code>`&amp;#8212;` is the decimal-encoded equivalent of `&amp;mdash;`.
-</code></pre><p>以产生：</p>
-<pre><code>&lt;p&gt;&lt;code&gt;&amp;amp;#8212;&lt;/code&gt; is the decimal-encoded
-equivalent of &lt;code&gt;&amp;amp;mdash;&lt;/code&gt;.&lt;/p&gt;
-</code></pre><h3 id="img">图片</h3>
-
-<p>很明显地，要在纯文字应用中设计一个「自然」的语法来插入图片是有一定难度的。</p>
-<p>Markdown 使用一种和链接很相似的语法来标记图片，同样也允许两种样式： <em>行内式</em>和<em>参考式</em>。</p>
-<p>行内式的图片语法看起来像是：</p>
-<pre><code>![Alt text](/path/to/img.jpg)
-
-![Alt text](/path/to/img.jpg &quot;Optional title&quot;)
-</code></pre><p>详细叙述如下：</p>
-<ul>
-<li>一个惊叹号 <code>!</code></li>
-<li>接着一个方括号，里面放上图片的替代文字</li>
-<li>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上<br>选择性的 ‘title’ 文字。</li>
-</ul>
-<p>参考式的图片语法则长得像这样：</p>
-<pre><code>![Alt text][id]
-</code></pre><p>「id」是图片参考的名称，图片参考的定义方式则和链接参考一样：</p>
-<pre><code>[id]: url/to/image  &quot;Optional title attribute&quot;
-</code></pre><p>到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的 <code>&lt;img&gt;</code> 标签。</p>
-<hr>
-<h2 id="misc">其它</h2>
-
-<h3 id="autolink">自动链接</h3>
-
-<p>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用尖括号包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：</p>
-<pre><code>&lt;http://example.com/&gt;
-</code></pre><p>Markdown 会转为：</p>
-<pre><code>&lt;a href=&quot;http://example.com/&quot;&gt;http://example.com/&lt;/a&gt;
-</code></pre><p>邮址的自动链接也很类似，只是 Markdown 会先做一个编码转换的过程，把文字字符转成 16 进位码的 HTML 实体，这样的格式可以糊弄一些不好的邮址收集机器人，例如：</p>
-<pre><code>&lt;address@example.com&gt;
-</code></pre><p>Markdown 会转成：</p>
-<pre><code>&lt;a href=&quot;&amp;#x6D;&amp;#x61;i&amp;#x6C;&amp;#x74;&amp;#x6F;:&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;
-&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;
-&amp;#109;&quot;&gt;&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;
-&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;
-</code></pre><p>在浏览器里面，这段字串（其实是 <code>&lt;a href=&quot;mailto:address@example.com&quot;&gt;address@example.com&lt;/a&gt;</code>）会变成一个可以点击的「address@example.com」链接。</p>
-<p>（这种作法虽然可以糊弄不少的机器人，但并不能全部挡下来，不过总比什么都不做好些。不管怎样，公开你的信箱终究会引来广告信件的。）</p>
-<h3 id="backslash">反斜杠</h3>
-
-<p>Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 <code>&lt;em&gt;</code> 标签），你可以在星号的前面加上反斜杠：</p>
-<pre><code>\*literal asterisks\*
-</code></pre><p>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</p>
-<pre><code>\   反斜线
-`   反引号
-*   星号
-_   底线
-{}  花括号
-[]  方括号
-()  括弧
-#   井字号
-+   加号
--   减号
-.   英文句点
-!   惊叹号
-</code></pre><h2 id="acknowledgement">感谢</h2>
-
-<p>感谢 <a href="https://twitter.com/#!/leafy7382" target="_blank" rel="external">leafy7382</a> 协助翻译，<a href="http://iamhlb.com/" target="_blank" rel="external">hlb</a>、<a href="http://twitter.com/randylien" target="_blank" rel="external">Randylien</a> 帮忙润稿，<a href="https://twitter.com/#!/ethantw" target="_blank" rel="external">ethantw</a> 的<a href="http://ethantw.net/projects/han/" target="_blank" rel="external">汉字标准格式・CSS Reset</a>， <a href="http://kidwm.net/" target="_blank" rel="external">WM</a> 回报文字错误。</p>
-<p>感谢 <a href="https://github.com/fenprace" target="_blank" rel="external">fenprace</a>，<a href="https://github.com/addv" target="_blank" rel="external">addv</a>。</p>
-<hr>
-<h2 id="editor">Markdown 免费编辑器</h2>
-
-<p>Windows 平台</p>
-<ul>
-<li><a href="http://markdownpad.com/" target="_blank" rel="external">MarkdownPad</a></li>
-<li><a href="http://code52.org/DownmarkerWPF/" target="_blank" rel="external">MarkPad</a></li>
-</ul>
-<p>Linux 平台</p>
-<ul>
-<li><a href="http://sourceforge.net/p/retext/home/ReText/" target="_blank" rel="external">ReText</a></li>
-</ul>
-<p>Mac 平台</p>
-<ul>
-<li><a href="http://mouapp.com/" target="_blank" rel="external">Mou</a></li>
-</ul>
-<p>在线编辑器</p>
-<ul>
-<li><a href="https://maxiang.io/" target="_blank" rel="external">马克飞象</a></li>
-<li><a href="https://stackedit.io/" target="_blank" rel="external">stackedit.io</a></li>
-<li><a href="http://markable.in/" target="_blank" rel="external">Markable.in</a></li>
-<li><a href="http://dillinger.io/" target="_blank" rel="external">Dillinger.io</a></li>
-</ul>
-<p>浏览器插件</p>
-<ul>
-<li><a href="https://chrome.google.com/webstore/detail/oknndfeeopgpibecfjljjfanledpbkog" target="_blank" rel="external">MaDe</a> (Chrome)</li>
-</ul>
-<p>高级应用</p>
-<ul>
-<li><a href="http://www.sublimetext.com/2" target="_blank" rel="external">Sublime Text 2</a> + <a href="http://ttscoff.github.com/MarkdownEditing/" target="_blank" rel="external">MarkdownEditing</a> / <a href="http://lucifr.com/2012/07/12/markdownediting-for-sublime-text-2/" target="_blank" rel="external">教程</a></li>
-</ul>
-<p>*** 如有更好的 Markdown 免费编辑器推荐，请到<a href="https://gitcafe.com/riku/Markdown-Syntax-CN/tickets/1" target="_blank" rel="external">这里反馈</a>，谢谢！</p>
-
-          
+          <p><strong>声明：</strong> 这份文档派生(fork)于<a href="http://markdown.tw/">繁体中文版</a>，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里<a href="http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md">查看它的源文件</a>。「繁体中文版的原始文件可以<a href="https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md">查看这里</a> 。」–By @<a href="http://twitter.com/riku">riku</a><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/markdown/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -2167,64 +1267,13 @@ _   底线
 
       
         
-          
-            <p><a href="">Hexo</a>是一个基于Nodejs快速简洁高效的博客框架，Hexo使用Markdown语法来编辑文章，只需要几秒钟的时间就可以成生静态的网页。整个系统就是一个博客系统。</p>
-<h2 id="环境的配置"><a href="#环境的配置" class="headerlink" title="环境的配置"></a>环境的配置</h2><h3 id="1-Node-js"><a href="#1-Node-js" class="headerlink" title="1. Node.js"></a>1. Node.js</h3><p>因为Hexo是一个基于Node.js的静态博客框架，因此需要先安装Node.js环境，下载地址：<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></p>
-<h3 id="2-Git"><a href="#2-Git" class="headerlink" title="2. Git"></a>2. Git</h3><p>此处为Windows平台下的下载地址：<a href="https://git-scm.com/" target="_blank" rel="external">Git</a>或者:<a href="https://desktop.github.com/" target="_blank" rel="external">GitHub Desktop</a>。<br>Mac及其他操作系统请参考Hexo官方提供的下载链接。</p>
-<h3 id="3-Hexo"><a href="#3-Hexo" class="headerlink" title="3. Hexo"></a>3. Hexo</h3><p>按装好 Node.js 后，通过下面的命令安装Hexo</p>
-<pre><code>npm install -g hexo-cli
-</code></pre><p>注：如果安装出现错误，可以切换到国内的镜像源，再试</p>
-<pre><code>npm config set registry=&quot;http://registry.cnpmjs.org&quot;
-npm install -g hexo-cli
-</code></pre><h2 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h2><p>创建一个新的文件夹（如E:\hexo）,打开<strong>Git Bash</strong> (有些命令会用到git ssh，建议以下命令都在<code>Git Bash</code>中执行)</p>
-<pre><code>hexo init
-</code></pre><p>执行init命令初始化可以指定目录，例如：<code>hexo init blog</code>；这一步是在hexo目录下建立网站所需要的所有文件，除了public文件夹（public文件是生成的静态网站）</p>
-<p>下一步 安装所需依赖包</p>
-<pre><code>npm install
-</code></pre><h2 id="Hexo基本命令"><a href="#Hexo基本命令" class="headerlink" title="Hexo基本命令"></a>Hexo基本命令</h2><h3 id="1-创建博文"><a href="#1-创建博文" class="headerlink" title="1.创建博文"></a>1.创建博文</h3><pre><code>hexo new &quot;My New Post&quot;
-</code></pre><blockquote>
-<p>hexo n “&lt; blog name &gt;”是创建一篇新的博客，执行该命令之后在 /source/_posts/ 目录下产生&lt; blog name &gt;.md文件；</p>
-</blockquote>
-<p>参考: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Hexo Writing</a> &amp; <a href="http://www.appinn.com/markdown/" target="_blank" rel="external">Markdown 语法说明</a></p>
-<h3 id="2-启动服务器"><a href="#2-启动服务器" class="headerlink" title="2.启动服务器"></a>2.启动服务器</h3><pre><code>hexo server
-</code></pre><p>访问网址 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 即可看到刚刚建立的博客</p>
-<p>参考: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="3-生成静态网页"><a href="#3-生成静态网页" class="headerlink" title="3.生成静态网页"></a>3.生成静态网页</h3><pre><code>hexo generate
-</code></pre><p>参考: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="4-部署"><a href="#4-部署" class="headerlink" title="4.部署"></a>4.部署</h3><pre><code>hexo deploy
-</code></pre><p>上传你的博客到服务器，参考: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-<p>以上命令都有缩写方式，如下</p>
-<pre><code>hexo new = hexo n         #创建新博客
-hexo generate = hexo g    #生成静态网页
-hexo server = hexo s      #启动服务器
-hexo delopy = hexo d      #部署
-</code></pre><h2 id="部署Hexo到Github"><a href="#部署Hexo到Github" class="headerlink" title="部署Hexo到Github"></a>部署Hexo到Github</h2><h4 id="1-创建仓库"><a href="#1-创建仓库" class="headerlink" title="1.创建仓库"></a>1.创建仓库</h4><p>打开<a href="github.com">github</a>，注册或登录github的账户，在github上创建一个仓库 <code>yourname.github.io</code> (yourname为你注册的用户名)</p>
-<h4 id="2-生成ssh-密钥"><a href="#2-生成ssh-密钥" class="headerlink" title="2.生成ssh 密钥"></a>2.生成ssh 密钥</h4><pre><code>ssh-keygen -t rsa -C &quot;&lt;your github&apos;s email&gt;&quot;
-</code></pre><p>一路按回车键即可，如果设置了密码请记住。 注意：<code>-C</code>是大写</p>
-<p>这一步在~/.ssh/下生成了两个文件id_rsa 和 id_rsa.pub （Windows 在<code>C:\Users\用户名\.ssh</code> 目录下）</p>
-<h4 id="3-在Github上添加SSH密钥"><a href="#3-在Github上添加SSH密钥" class="headerlink" title="3.在Github上添加SSH密钥"></a>3.在Github上添加SSH密钥</h4><p>打开上述的id_rsa.pub 文件，复制其内容，在 <a href="https://github.com/settings/keys" target="_blank" rel="external">https://github.com/settings/keys</a> 下 <code>New SSH key</code>，Title随便填写，作为你的电脑的一个记号。</p>
-<p><img src="/images/201604/github_ssh.jpg" alt="add new ssh key"></p>
-<p>可以输入下面的命令，测试设置是否成功</p>
-<pre><code>$ ssh -T git@github.com
-</code></pre><h4 id="4-配置-config-yml"><a href="#4-配置-config-yml" class="headerlink" title="4.配置_config.yml"></a>4.配置_config.yml</h4><p>编辑E:\hexo 下的_config.yml，修改 deploy 部分</p>
-<pre><code>deploy:
-    type: git
-    repo: ssh://git@github.com/yourname/yourname.github.io  ##这个是你的仓库地址，yourname.github.io有空格
-    branch: master
-</code></pre><h4 id="5-设置用户信息"><a href="#5-设置用户信息" class="headerlink" title="5.设置用户信息"></a>5.设置用户信息</h4><p>Git 会根据用户的名字和邮箱来记录提交。GitHub 也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的，名字必须是你的真名，而不是GitHub的昵称。</p>
-<pre><code>$ git config --global user.name &quot;yourname&quot;          #用户名
-$ git config --global user.email &quot;yourname@gmail.com&quot;    #填写自己的邮箱
-</code></pre><h4 id="6-完成部署"><a href="#6-完成部署" class="headerlink" title="6.完成部署"></a>6.完成部署</h4><pre><code>hexo g
-hexo d
-</code></pre><h5 id="部署报错："><a href="#部署报错：" class="headerlink" title="部署报错："></a>部署报错：</h5><blockquote>
-<p>1.检查依赖包 hexo-deployer-git 是否安装，如果没有<br>      <code>npm install hexo-deployer-git --save</code><br>2.检查命令行工具是否支持 git ssh 命令；建议<strong>Git Bash</strong>环境执行命令</p>
-</blockquote>
-<h4 id="7-绑定个人域名"><a href="#7-绑定个人域名" class="headerlink" title="7.绑定个人域名"></a>7.绑定个人域名</h4><p>1.在仓库根目录下添加一个CNAME文件，没有后缀名；内容为所绑定的域名</p>
-<p>2.域名解析：如果解析顶级域名创建A记录到 <code>192.30.252.153</code>；如果为二级域名，创建CNAME到 <code>yourname.github.com.</code> 其中cname为你的github用户名</p>
-<p>更多参考: <a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">Hexo中文文档</a></p>
-<hr>
-
-          
+          <p><a href="">Hexo</a>是一个基于Nodejs快速简洁高效的博客框架，Hexo使用Markdown语法来编辑文章，只需要几秒钟的时间就可以成生静态的网页。整个系统就是一个博客系统。</p>
+<h2 id="环境的配置"><a href="#环境的配置" class="headerlink" title="环境的配置"></a>环境的配置</h2>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/hello-hexo/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
