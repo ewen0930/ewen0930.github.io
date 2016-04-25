@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hello Ewen">
 <meta property="og:description" content="Copy From http://www.ahonn.me/2016/04/04/javascript-closure/
 作用域在 JavaScript 中变量的作用域与其他语言不同，JavaScript 的作用域不是由 {} 来界定，而是函数。所以循环实际上是在全局作用域中。">
-<meta property="og:updated_time" content="2016-04-25T16:56:24.000Z">
+<meta property="og:updated_time" content="2016-04-25T17:28:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 之闭包">
 <meta name="twitter:description" content="Copy From http://www.ahonn.me/2016/04/04/javascript-closure/
@@ -320,37 +320,32 @@
 
       
         <p>Copy From <a href="http://www.ahonn.me/2016/04/04/javascript-closure/" target="_blank" rel="external">http://www.ahonn.me/2016/04/04/javascript-closure/</a></p>
-<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>在 JavaScript 中变量的作用域与其他语言不同，JavaScript 的作用域不是由 <code>{}</code> 来界定，而是函数。所以循环实际上是在全局作用域中。<br><a id="more"></a><br>    for(var i = 0; i &lt; 10; i++) {}</p>
-<pre><code>console.log(i);  // 10
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>在 JavaScript 中变量的作用域与其他语言不同，JavaScript 的作用域不是由 <code>{}</code> 来界定，而是函数。所以循环实际上是在全局作用域中。<br><a id="more"></a></p>
+<pre><code>for(var i = 0; i &lt; 10; i++) {}
+console.log(i);  // 10
 </code></pre><h3 id="全局变量-amp-局部变量"><a href="#全局变量-amp-局部变量" class="headerlink" title="全局变量 &amp; 局部变量"></a>全局变量 &amp; 局部变量</h3><p>JavaScript 变量的作用域分为两种，全局和局部。</p>
 <p>在 JavaScript 中声明全局变量有两种方式，一种是在全局环境下使用 <code>var</code> 声明，另一种是在任何地方直接初始化变量，那么它将会是全局变量。</p>
 <pre><code>var name = &apos;ahonn&apos;;   // 全局变量
-
 function f1() {
   name = &apos;ahonn&apos;;   // 还是全局变量
 }
 </code></pre><p>除了在任意地方直接初始化声明全局变量这一特殊之处外，JavaScript 全局变量还可以在函数内部直接读取。</p>
 <pre><code>var name = &apos;ahonn&apos;;
-
 function f1() {
   console.log(name);
 }
-
 f1();   // &apos;ahonn&apos;
 </code></pre><p>在函数中使用 <code>var</code> 定义的变量为局部变量。因为 JavaScript 的作用域是由函数界定，那么理所当然的函数外部是无法读取函数内部的局部变量。这一点其实其他的编程语言也是这样的。</p>
 <pre><code>function f1() {
-                                var name = &apos;ahonn&apos;;
-                              }
-
-                              console.log(name) // Error
+    var name = &apos;ahonn&apos;;
+}
+console.log(name) // Error
 </code></pre><h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><p>作用域链的原理与原型链很类似。在某个环境中为了读取变量时，会沿着作用域链来搜索这个变量，从作用域链的前端开始，向上级搜索。如果在当前局部环境中没有找到该变量，则继续沿作用域链向上搜索，直到最顶层。搜索到该变量时将停止搜索，如果到最后还是没有找到该变量，那么意味着这个变量是未定义的，即它的值为 <code>undefined</code>。</p>
 <pre><code>var a = &apos;a&apos;;
-
 function f1() {
   var b = &apos;b&apos;;
   console.log(a + b);
 }
-
 f1()     // &apos;ab&apos;
 </code></pre><p>在这个例子中，在全局环境中定义了全局变量 a，然后在函数中定义了局部变量 b。函数通过 <code>console.log</code> 输出 a + b。</p>
 <p>首先在当前的局部环境中搜索变量 a 的值，没有找到。那么继续向上一级搜索，在全局环境中找到标识符为 a 的变量的值 ‘a’。接着在局部环境中搜索变量 b，得到局部变量 b 的值 ‘b’。最后输入变量 a 和 b 的值拼接后的字符串的值。</p>
@@ -362,7 +357,6 @@ f1()     // &apos;ab&apos;
     console.log(name);
   }
 }
-
 f1();   // &apos;ahonn&apos;
 </code></pre><p>一般情况下，当函数执行后，函数所在的局部环境将被销毁，也就是说函数在执行后函数中的变量是会被销毁的，在内存中就仅存在全局环境，即全局变量。</p>
 <p>但是使用闭包的情况又有所不同，在函数内部定义的匿名函数会包含函数（外部函数，即包含匿名函数的函数）中的变量。在外部函数执行完毕后，原本应该被销毁的局部变量不会被销毁，因为闭包的作用域链仍然在引用这些局部函数，内存的垃圾回收机制不会回收这部分变量所在的内存空间。直到匿名函数被销毁后，这些局部对象才会被销毁。</p>
@@ -370,11 +364,9 @@ f1();   // &apos;ahonn&apos;
 <pre><code>function f1() {
   var e = document.getElementById(&apos;id&apos;);
   var id = e.id;
-
   e.onclick = function() {
     alert(id);
   }
-
   e = null;     // 删除不使用的局部变量值，只将需要的 id 保存为副本
 }
 </code></pre>
