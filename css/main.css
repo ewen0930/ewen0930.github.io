@@ -1455,7 +1455,7 @@ pre .javascript .function {
   margin: 0 auto;
   max-width: 96px;
   height: auto;
-  border: 2px solid #333;
+/*border: 2px solid #333;*/
   padding: 2px;
 }
 .site-author-name {
@@ -1534,7 +1534,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a6ffc3;
+  background: #2d8b20;
 }
 .links-of-blogroll {
   font-size: 13px;
