@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP,Ajax,Cross," />
+  <meta name="keywords" content="Hexo, NexT, Ewen" />
 
 
 
@@ -80,19 +80,16 @@
 
 
 
-<meta name="description" content="通过设置Access-Control-Allow-Origin来实现跨域。
-允许单个域名访问header(&amp;apos;Access-Control-Allow-Origin:http://client.ewenx.com&amp;apos;);">
-<meta property="og:type" content="article">
-<meta property="og:title" content="PHP Ajax 跨域问题最佳解决方案">
-<meta property="og:url" content="http://ewen0930.github.io/2016/04/cross-php/index.html">
+<meta name="description" content="整理一些开发中的经验和遇到的问题">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hello Ewen">
+<meta property="og:url" content="http://ewen0930.github.io/README.html">
 <meta property="og:site_name" content="Hello Ewen">
-<meta property="og:description" content="通过设置Access-Control-Allow-Origin来实现跨域。
-允许单个域名访问header(&amp;apos;Access-Control-Allow-Origin:http://client.ewenx.com&amp;apos;);">
-<meta property="og:updated_time" content="2016-04-25T18:11:34.000Z">
+<meta property="og:description" content="整理一些开发中的经验和遇到的问题">
+<meta property="og:updated_time" content="2016-04-25T18:22:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP Ajax 跨域问题最佳解决方案">
-<meta name="twitter:description" content="通过设置Access-Control-Allow-Origin来实现跨域。
-允许单个域名访问header(&amp;apos;Access-Control-Allow-Origin:http://client.ewenx.com&amp;apos;);">
+<meta name="twitter:title" content="Hello Ewen">
+<meta name="twitter:description" content="整理一些开发中的经验和遇到的问题">
 
 
 
@@ -110,7 +107,13 @@
   };
 </script>
 
-  <title> PHP Ajax 跨域问题最佳解决方案 | Hello Ewen </title>
+  <title>
+  
+
+  
+     | Hello Ewen
+  
+</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -141,7 +144,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -241,157 +244,10 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    
+      <p>整理一些开发中的经验和遇到的问题</p>
 
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                PHP Ajax 跨域问题最佳解决方案
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-24T18:22:26+08:00" content="2016-04-24">
-              2016-04-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>通过设置Access-Control-Allow-Origin来实现跨域。</p>
-<h3 id="允许单个域名访问"><a href="#允许单个域名访问" class="headerlink" title="允许单个域名访问"></a>允许单个域名访问</h3><pre><code>header(&apos;Access-Control-Allow-Origin:http://client.ewenx.com&apos;);
-</code></pre><a id="more"></a>
-<h3 id="允许多个域名访问"><a href="#允许多个域名访问" class="headerlink" title="允许多个域名访问"></a>允许多个域名访问</h3><pre><code>$origin = isset($_SERVER[&apos;HTTP_ORIGIN&apos;])? $_SERVER[&apos;HTTP_ORIGIN&apos;] : &apos;&apos;;
-
-$allow_origin = array(
-    &apos;http://client1.ewenx.com&apos;,
-    &apos;http://client2.ewenx.com&apos;
-);
-
-if(in_array($origin, $allow_origin)){
-    header(&apos;Access-Control-Allow-Origin:&apos;.$origin);
-}
-</code></pre><h3 id="允许所有域名访问"><a href="#允许所有域名访问" class="headerlink" title="允许所有域名访问"></a>允许所有域名访问</h3><pre><code>header(&apos;Access-Control-Allow-Origin:*&apos;);
-</code></pre>
-      
-    </div>
-    
-    <div>
-      
-        
-      
-    </div>
-
-    <div>
-      
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/PHP/" rel="tag">#PHP</a>
-          
-            <a href="/tags/Ajax/" rel="tag">#Ajax</a>
-          
-            <a href="/tags/Cross/" rel="tag">#Cross</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/04/javascript-closure/" rel="next" title="JavaScript 之闭包">
-                <i class="fa fa-chevron-left"></i> JavaScript 之闭包
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/cross-javascript/" rel="prev" title="Ajax 跨域问题解决方案">
-                Ajax 跨域问题解决方案 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -423,17 +279,8 @@ if(in_array($origin, $allow_origin)){
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/default_avatar.jpg"
@@ -483,17 +330,6 @@ if(in_array($origin, $allow_origin)){
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#允许单个域名访问"><span class="nav-number">1.</span> <span class="nav-text">允许单个域名访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#允许多个域名访问"><span class="nav-number">2.</span> <span class="nav-text">允许多个域名访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#允许所有域名访问"><span class="nav-number">3.</span> <span class="nav-text">允许所有域名访问</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -590,10 +426,6 @@ if(in_array($origin, $allow_origin)){
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 
