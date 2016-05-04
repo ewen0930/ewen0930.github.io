@@ -88,7 +88,7 @@ package.json 依赖列表">
 <meta property="og:site_name" content="Hello EWEN">
 <meta property="og:description" content="整理了网站开发中常用的 gulp 配置
 package.json 依赖列表">
-<meta property="og:updated_time" content="2016-05-04T11:19:14.000Z">
+<meta property="og:updated_time" content="2016-05-04T12:08:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gulp 常用配置">
 <meta name="twitter:description" content="整理了网站开发中常用的 gulp 配置
@@ -364,7 +364,7 @@ var livereload = require(&apos;gulp-livereload&apos;);  //livereload插件
 
 // 合并文件之后压缩代码
 gulp.task(&apos;minify&apos;, function () {
-    return gulp.src([&apos;src/js/easeljs/easeljs-0.7.1.min.js&apos;, &apos;src/js/easeljs/tweenjs-0.5.1.min.js&apos;, &apos;src/js/easeljs/preloadjs-0.4.1.min.js&apos;, &apos;src/js/easeljs/movieclip-0.7.1.min.js&apos;, &apos;src/js/common.js&apos;, &apos;src/js/lottery.js&apos;, &apos;js/lottery_main.js&apos;])
+    return gulp.src([&apos;src/js/easeljs/*.min.js&apos;, &apos;src/js/common.js&apos;, &apos;src/js/lottery.js&apos;, &apos;js/lottery_main.js&apos;])
         .pipe(sourcemaps.init())
         .pipe(concat(&apos;main.js&apos;))
         //.pipe(gulp.dest(&apos;src/js&apos;))
@@ -375,7 +375,6 @@ gulp.task(&apos;minify&apos;, function () {
         .pipe(gulp.dest(&apos;dist/js&apos;));
 });
 
-
 //压缩HTML
 //collapseWhitespace:删除空格   removeComments:删除注释  preserveLineBreaks:保持原行样式
 gulp.task(&apos;minify-html&apos;, function () {
@@ -384,7 +383,6 @@ gulp.task(&apos;minify-html&apos;, function () {
         .pipe(htmlmin(opts))
         .pipe(gulp.dest(&apos;dist/&apos;))
 });
-
 
 //压缩CSS
 gulp.task(&apos;minify-css&apos;, function () {
@@ -395,12 +393,10 @@ gulp.task(&apos;minify-css&apos;, function () {
         .pipe(gulp.dest(&apos;dist/css&apos;));
 });
 
-
 //删除文件
 gulp.task(&apos;clean&apos;, function (cb) {
     del([&apos;dist/css&apos;, &apos;dist/js&apos;, &apos;dist/images&apos;], cb)
 });
-
 
 // 监视文件的变化
 gulp.task(&apos;watch&apos;, function () {
@@ -412,14 +408,13 @@ gulp.task(&apos;watch&apos;, function () {
     //gulp.watch(&apos;dist/**&apos;).on(&apos;change&apos;, livereload.changed);
 });
 
-
 // 注册缺省任务
 gulp.task(&apos;css&apos;, [&apos;minify-css&apos;]);
 gulp.task(&apos;default&apos;, [&apos;minify&apos;, &apos;minify-css&apos;]);
 gulp.task(&apos;debug&apos;, [&apos;minify&apos;, &apos;watch&apos;]);
 </code></pre><h4 id="gulp安装与执行"><a href="#gulp安装与执行" class="headerlink" title="gulp安装与执行"></a>gulp安装与执行</h4><pre><code>npm install -g gulp-cli         //gulp安装
 
-gulp    ////gulp执行默认命令  或 gulp minify
+gulp    //gulp执行默认命令  或 gulp minify
 </code></pre>
       
     </div>
