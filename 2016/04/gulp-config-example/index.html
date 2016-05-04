@@ -88,7 +88,7 @@ package.json 依赖列表">
 <meta property="og:site_name" content="Hello EWEN">
 <meta property="og:description" content="整理了网站开发中常用的 gulp 配置
 package.json 依赖列表">
-<meta property="og:updated_time" content="2016-04-26T17:58:04.000Z">
+<meta property="og:updated_time" content="2016-05-04T11:19:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gulp 常用配置">
 <meta name="twitter:description" content="整理了网站开发中常用的 gulp 配置
@@ -322,30 +322,28 @@ package.json 依赖列表">
         <p>整理了网站开发中常用的 gulp 配置</p>
 <h4 id="package-json-依赖列表"><a href="#package-json-依赖列表" class="headerlink" title="package.json 依赖列表"></a>package.json 依赖列表</h4><a id="more"></a>
 <pre><code>{
-   &quot;name&quot;: &quot;miFarm_Root&quot;,
-   &quot;description&quot;: &quot;miFarm Root&quot;,
-   &quot;version&quot;: &quot;0.8.0&quot;,
-   &quot;author&quot;: &quot;ewen&quot;,
+  &quot;name&quot;: &quot;ewenConfig&quot;,
+  &quot;description&quot;: &quot;ewen product&quot;,
+  &quot;version&quot;: &quot;0.9.0&quot;,
+  &quot;author&quot;: &quot;ewen&quot;,
 
-   &quot;devDependencies&quot;: {
-     &quot;gulp&quot;: &quot;*&quot;,
-     &quot;gulp-jshint&quot;: &quot;*&quot;,
-     &quot;gulp-concat&quot;: &quot;*&quot;,
-     &quot;gulp-uglify&quot;: &quot;*&quot;,
-     &quot;gulp-rename&quot;: &quot;*&quot;,
+  &quot;devDependencies&quot;: {
+    &quot;gulp&quot;: &quot;*&quot;,
+    &quot;gulp-concat&quot;: &quot;*&quot;,
+    &quot;gulp-uglify&quot;: &quot;*&quot;,
+    &quot;gulp-rename&quot;: &quot;*&quot;,
 
-     &quot;del&quot;: &quot;*&quot;,
-     &quot;gulp-livereload&quot;: &quot;*&quot;,
+    &quot;del&quot;: &quot;*&quot;,
+    &quot;gulp-livereload&quot;: &quot;*&quot;,
 
-     &quot;gulp-autoprefixer&quot;: &quot;*&quot;,
-     &quot;gulp-minify-html&quot;: &quot;*&quot;,
-     &quot;gulp-minify-css&quot;: &quot;*&quot;,
-     &quot;gulp-sourcemaps&quot;: &quot;*&quot;
-   }
+    &quot;gulp-autoprefixer&quot;: &quot;*&quot;,
+    &quot;gulp-htmlmin&quot;: &quot;*&quot;,
+    &quot;gulp-clean-css&quot;: &quot;*&quot;,
+    &quot;gulp-sourcemaps&quot;: &quot;*&quot;
+  }
 }
 </code></pre><h4 id="gulpfile-js-配置"><a href="#gulpfile-js-配置" class="headerlink" title="gulpfile.js 配置"></a>gulpfile.js 配置</h4><pre><code>// 引入 gulp &amp; 组件
 var gulp = require(&apos;gulp&apos;);
-var jshint = require(&apos;gulp-jshint&apos;);
 var concat = require(&apos;gulp-concat&apos;);
 var rename = require(&apos;gulp-rename&apos;);
 var uglify = require(&apos;gulp-uglify&apos;);
@@ -356,50 +354,45 @@ var del = require(&apos;del&apos;);
 //var sass = require(&apos;gulp-sass&apos;);
 //var less = require(&apos;gulp-less&apos;);
 
-var minifyHTML = require(&apos;gulp-minify-html&apos;);  //代码压缩
-var minifyCSS = require(&apos;gulp-minify-css&apos;);
+//var minifyHTML = require(&apos;gulp-minify-html&apos;);  //代码压缩
+var htmlmin = require(&apos;gulp-htmlmin&apos;);  //代码压缩
+var cleanCSS = require(&apos;gulp-clean-css&apos;);
 var prefix = require(&apos;gulp-autoprefixer&apos;);
 var sourcemaps = require(&apos;gulp-sourcemaps&apos;);
 
 var livereload = require(&apos;gulp-livereload&apos;);  //livereload插件
 
-// 语法检查  Lint JS
-gulp.task(&apos;lint&apos;, function () {
-    return gulp.src([&apos;src/js/easeljs/*.js&apos;, &apos;!src/js/main.js&apos;])
-        .pipe(jshint())
-        .pipe(jshint.reporter(&apos;default&apos;));
-});
-
-
 // 合并文件之后压缩代码
 gulp.task(&apos;minify&apos;, function () {
-    return gulp.src([&apos;src/js/easeljs/easeljs-0.7.1.min.js&apos;, &apos;src/js/easeljs/tweenjs-0.5.1.min.js&apos;, &apos;src/js/easeljs/preloadjs-0.4.1.min.js&apos;, &apos;src/js/easeljs/movieclip-0.7.1.min.js&apos;, &apos;src/js/easeljs/soundjs-0.5.2.min.js&apos;, &apos;src/js/common.js&apos;, &apos;src/js/GameMain.js&apos;, &apos;src/js/hero.js&apos;, &apos;src/js/hero_assets.js&apos;])
+    return gulp.src([&apos;src/js/easeljs/easeljs-0.7.1.min.js&apos;, &apos;src/js/easeljs/tweenjs-0.5.1.min.js&apos;, &apos;src/js/easeljs/preloadjs-0.4.1.min.js&apos;, &apos;src/js/easeljs/movieclip-0.7.1.min.js&apos;, &apos;src/js/common.js&apos;, &apos;src/js/lottery.js&apos;, &apos;js/lottery_main.js&apos;])
+        .pipe(sourcemaps.init())
         .pipe(concat(&apos;main.js&apos;))
         //.pipe(gulp.dest(&apos;src/js&apos;))
         //.pipe(rename(&apos;main.js&apos;))
         //.pipe(uglify({compress: {drop_console: true}}))
         .pipe(uglify())
+        .pipe(sourcemaps.write(&apos;../maps&apos;))
         .pipe(gulp.dest(&apos;dist/js&apos;));
 });
 
 
 //压缩HTML
-//empty:不删除空的属性  cdata:脚本不带CDATA  comments:不删除注释  conditionals:不删除IE条件注释  spare:不删除冗余属性  quotes:不删除引号
+//collapseWhitespace:删除空格   removeComments:删除注释  preserveLineBreaks:保持原行样式
 gulp.task(&apos;minify-html&apos;, function () {
-    var opts = {comments: false, spare: true, quotes: true, empty: false, conditionals: true};
-    gulp.src(&apos;src/index.html&apos;)
-        .pipe(minifyHTML(opts))
+    var opts = {collapseWhitespace: true, removeComments: true, preserveLineBreaks: true};
+    gulp.src(&apos;src/*.html&apos;)
+        .pipe(htmlmin(opts))
         .pipe(gulp.dest(&apos;dist/&apos;))
 });
 
 
 //压缩CSS
 gulp.task(&apos;minify-css&apos;, function () {
-    gulp.src(&apos;src/css/*.css&apos;)
-        //.pipe(prefix(&apos;last 2 versions&apos;, &apos;&gt; 1%&apos;, &apos;ie 9&apos;))
-        .pipe(minifyCSS({keepBreaks: true}))
-        //.pipe(rename(&apos;style.min.css&apos;))
-        .pipe(gulp.dest(&apos;dist/css&apos;))
+    return gulp.src(&apos;src/css/*.css&apos;)
+        .pipe(sourcemaps.init())
+        .pipe(cleanCSS())
+        .pipe(sourcemaps.write(&apos;../maps&apos;))
+        .pipe(gulp.dest(&apos;dist/css&apos;));
 });
 
 
@@ -423,7 +416,10 @@ gulp.task(&apos;watch&apos;, function () {
 // 注册缺省任务
 gulp.task(&apos;css&apos;, [&apos;minify-css&apos;]);
 gulp.task(&apos;default&apos;, [&apos;minify&apos;, &apos;minify-css&apos;]);
-gulp.task(&apos;debug&apos;, [&apos;lint&apos;, &apos;minify&apos;, &apos;watch&apos;]);
+gulp.task(&apos;debug&apos;, [&apos;minify&apos;, &apos;watch&apos;]);
+</code></pre><h4 id="gulp安装与执行"><a href="#gulp安装与执行" class="headerlink" title="gulp安装与执行"></a>gulp安装与执行</h4><pre><code>npm install -g gulp-cli         //gulp安装
+
+gulp    ////gulp执行默认命令  或 gulp minify
 </code></pre>
       
     </div>
@@ -579,7 +575,7 @@ gulp.task(&apos;debug&apos;, [&apos;lint&apos;, &apos;minify&apos;, &apos;watch&
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#package-json-依赖列表"><span class="nav-number">1.</span> <span class="nav-text">package.json 依赖列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gulpfile-js-配置"><span class="nav-number">2.</span> <span class="nav-text">gulpfile.js 配置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#package-json-依赖列表"><span class="nav-number">1.</span> <span class="nav-text">package.json 依赖列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gulpfile-js-配置"><span class="nav-number">2.</span> <span class="nav-text">gulpfile.js 配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gulp安装与执行"><span class="nav-number">3.</span> <span class="nav-text">gulp安装与执行</span></a></li></ol></div>
             
           </div>
         </section>
