@@ -1,0 +1,716 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="nodejs,npm,yarn," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Yarn 是一个新的包管理器，用于替代现有的 npm 客户端或者其他兼容 npm 仓库的包管理工具。Yarn 保留了现有工作流的特性，优点是更快、更安全、更可靠。
+特性
+同时兼容 npm 与 bower 工作流，并支持两种软件仓库混合使用
+可以限制已安装模块的协议，并提供方法输出协议信息
+提供一套稳定的公有 JS API，用于记录构建工具的输出信息
+可读、最小化、美观的 CLI 输出信息">
+<meta property="og:type" content="article">
+<meta property="og:title" content="替代NPM的包管理工具Yarn">
+<meta property="og:url" content="http://ewen0930.github.io/2016/11/nodejs-yarn/index.html">
+<meta property="og:site_name" content="Hello EWEN">
+<meta property="og:description" content="Yarn 是一个新的包管理器，用于替代现有的 npm 客户端或者其他兼容 npm 仓库的包管理工具。Yarn 保留了现有工作流的特性，优点是更快、更安全、更可靠。
+特性
+同时兼容 npm 与 bower 工作流，并支持两种软件仓库混合使用
+可以限制已安装模块的协议，并提供方法输出协议信息
+提供一套稳定的公有 JS API，用于记录构建工具的输出信息
+可读、最小化、美观的 CLI 输出信息">
+<meta property="og:updated_time" content="2016-11-21T08:59:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="替代NPM的包管理工具Yarn">
+<meta name="twitter:description" content="Yarn 是一个新的包管理器，用于替代现有的 npm 客户端或者其他兼容 npm 仓库的包管理工具。Yarn 保留了现有工作流的特性，优点是更快、更安全、更可靠。
+特性
+同时兼容 npm 与 bower 工作流，并支持两种软件仓库混合使用
+可以限制已安装模块的协议，并提供方法输出协议信息
+提供一套稳定的公有 JS API，用于记录构建工具的输出信息
+可读、最小化、美观的 CLI 输出信息">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> 替代NPM的包管理工具Yarn | Hello EWEN </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?e02de23bdd53038bb0a2d3282a6e7849";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hello EWEN</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                替代NPM的包管理工具Yarn
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-11-21T16:57:41+08:00" content="2016-11-21">
+              2016-11-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/nodejs/" itemprop="url" rel="index">
+                    <span itemprop="name">nodejs</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Yarn 是一个新的包管理器，用于替代现有的 npm 客户端或者其他兼容 npm 仓库的包管理工具。Yarn 保留了现有工作流的特性，优点是更快、更安全、更可靠。</p>
+<h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h4><ul>
+<li>同时兼容 npm 与 bower 工作流，并支持两种软件仓库混合使用</li>
+<li>可以限制已安装模块的协议，并提供方法输出协议信息</li>
+<li>提供一套稳定的公有 JS API，用于记录构建工具的输出信息</li>
+<li><p>可读、最小化、美观的 CLI 输出信息</p>
+<a id="more"></a>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>  npm install yarn -g<br>  #最新版本直接用yarn名称，用yarnpkg 只能安装到 0.15.1版本<br>  #npm install -g yarnpkg </p>
+</li>
+</ul>
+<h4 id="常用命令-与npm命令比较"><a href="#常用命令-与npm命令比较" class="headerlink" title="常用命令 与npm命令比较"></a>常用命令 与npm命令比较</h4><table>
+<thead>
+<tr>
+<th>NPM</th>
+<th>YARN</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>npm init</td>
+<td>yarn init</td>
+<td>初始化某个项目</td>
+</tr>
+<tr>
+<td>npm install/link</td>
+<td>yarn install/link</td>
+<td>默认的安装依赖操作</td>
+</tr>
+<tr>
+<td>npm install taco —save</td>
+<td>yarn add taco</td>
+<td>安装某个依赖，并且默认保存到package.</td>
+</tr>
+<tr>
+<td>npm uninstall taco —save</td>
+<td>yarn remove taco</td>
+<td>移除某个依赖项目</td>
+</tr>
+<tr>
+<td>npm install taco —save-dev</td>
+<td>yarn add taco —dev</td>
+<td>安装某个开发时依赖项目</td>
+</tr>
+<tr>
+<td>npm update taco —save</td>
+<td>yarn upgrade taco</td>
+<td>更新某个依赖项目</td>
+</tr>
+<tr>
+<td>npm install taco –global</td>
+<td>yarn global add taco</td>
+<td>安装某个全局依赖项目</td>
+</tr>
+<tr>
+<td>npm publish/login/logout</td>
+<td>yarn publish/login/logout</td>
+<td>发布/登录/登出，一系列NPM Registry操作</td>
+</tr>
+<tr>
+<td>npm run/test</td>
+<td>yarn run/test</td>
+<td>运行某个命令</td>
+</tr>
+<tr>
+<td>npm ls</td>
+<td>yarn ls</td>
+<td>列出当前安装的了所有包</td>
+</tr>
+</tbody>
+</table>
+<p>注意：yarn管理器有一个很重要的文件需要注意，就是yarn.lock，这个是用来依赖的正确性，快速可靠安装的；是执行cli的时候自动生成的，在项目的根目录下，需要保留！！！！不要编辑它，这是自动生成的</p>
+<pre><code>npm install === yarn
+#install 安装是默认行为
+
+npm install taco --save === yarn add taco
+#taco 包立即被保存到 package.json 中
+
+npm uninstall taco --save === yarn remove taco
+#在 npm 中，可以使用 npm config set save true 设置 — -save 为默认行为，但这对多数开发者而言并非显而易见的。在 yarn 中，在package.json 中添加（add）和移除（remove）等行为是默认的
+
+npm install taco --save-dev === yarn add taco --dev
+npm update --save === yarn upgrade
+#update（更新） vs upgrade（升级）， 赞！
+#upgrade 才是实际做的事！版本号提升时，发生的正是upgrade！
+
+npm install taco@latest --save === yarn add taco
+npm install taco --global === yarn global add taco —— 一如既往，请谨慎使用 global 标记。
+</code></pre><p>包和 npm registry 上是一样的。大致而言，Yarn 只是一个新的安装工具，npm 结构和 registry 还是一样的。</p>
+<pre><code>npm init === yarn init
+npm link === yarn link
+npm outdated === yarn outdated
+npm publish === yarn publish
+npm run === yarn run
+npm cache clean === yarn cache clean
+npm login === yarn login (logout 同理)
+npm test === yarn test
+</code></pre><h4 id="Yarn-独有的命令"><a href="#Yarn-独有的命令" class="headerlink" title="Yarn 独有的命令"></a>Yarn 独有的命令</h4><pre><code>yarn licenses ls —— 允许你检查依赖的许可信息。
+yarn licenses generate —— 自动创建依赖免责声明 license。
+yarn why taco —— 检查为什么会安装 taco，详细列出依赖它的其他包（鸣谢 Olivier Combe）。
+</code></pre>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nodejs/" rel="tag">#nodejs</a>
+          
+            <a href="/tags/npm/" rel="tag">#npm</a>
+          
+            <a href="/tags/yarn/" rel="tag">#yarn</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/nodejs-npm/" rel="next" title="npm常用命令">
+                <i class="fa fa-chevron-left"></i> npm常用命令
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Ewen" />
+          <p class="site-author-name" itemprop="name">Ewen</p>
+          <p class="site-description motion-element" itemprop="description">每一个不曾起舞的日子都是对生命的辜负</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#特性"><span class="nav-number">1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令-与npm命令比较"><span class="nav-number">3.</span> <span class="nav-text">常用命令 与npm命令比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Yarn-独有的命令"><span class="nav-number">4.</span> <span class="nav-text">Yarn 独有的命令</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ewen</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
