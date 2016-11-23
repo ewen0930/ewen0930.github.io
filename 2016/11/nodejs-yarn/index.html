@@ -100,7 +100,7 @@
 可以限制已安装模块的协议，并提供方法输出协议信息
 提供一套稳定的公有 JS API，用于记录构建工具的输出信息
 可读、最小化、美观的 CLI 输出信息">
-<meta property="og:updated_time" content="2016-11-21T08:59:16.000Z">
+<meta property="og:updated_time" content="2016-11-23T09:32:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="替代NPM的包管理工具Yarn">
 <meta name="twitter:description" content="Yarn 是一个新的包管理器，用于替代现有的 npm 客户端或者其他兼容 npm 仓库的包管理工具。Yarn 保留了现有工作流的特性，优点是更快、更安全、更可靠。
@@ -404,22 +404,22 @@
 <td>默认的安装依赖操作</td>
 </tr>
 <tr>
-<td>npm install taco —save</td>
+<td>npm install taco –save</td>
 <td>yarn add taco</td>
 <td>安装某个依赖，并且默认保存到package.</td>
 </tr>
 <tr>
-<td>npm uninstall taco —save</td>
+<td>npm uninstall taco –save</td>
 <td>yarn remove taco</td>
 <td>移除某个依赖项目</td>
 </tr>
 <tr>
-<td>npm install taco —save-dev</td>
-<td>yarn add taco —dev</td>
+<td>npm install taco –save-dev</td>
+<td>yarn add taco –dev</td>
 <td>安装某个开发时依赖项目</td>
 </tr>
 <tr>
-<td>npm update taco —save</td>
+<td>npm update taco –save</td>
 <td>yarn upgrade taco</td>
 <td>更新某个依赖项目</td>
 </tr>
@@ -453,7 +453,8 @@ npm install taco --save === yarn add taco
 #taco 包立即被保存到 package.json 中
 
 npm uninstall taco --save === yarn remove taco
-#在 npm 中，可以使用 npm config set save true 设置 — -save 为默认行为，但这对多数开发者而言并非显而易见的。在 yarn 中，在package.json 中添加（add）和移除（remove）等行为是默认的
+#在 npm 中，可以使用 npm config set save true 设置 --save 为默认行为，但这对多数开发者而言并非显而易见的。
+#在 yarn 中，在package.json 中添加（add）和移除（remove）等行为是默认的
 
 npm install taco --save-dev === yarn add taco --dev
 npm update --save === yarn upgrade
@@ -461,7 +462,7 @@ npm update --save === yarn upgrade
 #upgrade 才是实际做的事！版本号提升时，发生的正是upgrade！
 
 npm install taco@latest --save === yarn add taco
-npm install taco --global === yarn global add taco —— 一如既往，请谨慎使用 global 标记。
+npm install taco --global === yarn global add taco #一如既往，请谨慎使用 global 标记。
 </code></pre><p>包和 npm registry 上是一样的。大致而言，Yarn 只是一个新的安装工具，npm 结构和 registry 还是一样的。</p>
 <pre><code>npm init === yarn init
 npm link === yarn link
